@@ -32,7 +32,8 @@ export const routes: Routes = [
       { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' }
     ]
-  }
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 export const routing: ModuleWithProviders = RouterModule.forChild(routes);

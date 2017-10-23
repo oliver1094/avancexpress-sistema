@@ -84,8 +84,7 @@
                     <span class="font-weight-bold">Monto </span>del Adelanto</p>
                 </div>
                 <div class="col-md-12 pd-0">
-                  <ion-range-slider #sliderElement step="500" min="0" max="10000" grid="true" grid_num="10"
-                    decorate_both="false" (onChange)="onInputChange($event)"></ion-range-slider>
+                  <ion-range-slider #sliderElement step="500" min="0" max="10000" grid="true" grid_num="10" decorate_both="false" (onChange)="onInputChange($event)"></ion-range-slider>
                 </div>
                 <div class="col-md-12 pd-0">
                   <hr class="hr-header">
@@ -219,21 +218,35 @@
     <div class="col-md-8">
       <h1 class="title text-center" style="color: #531B93;">BENEFICIOS</h1>
       <hr class="intro-divider">
+      <br>      
+        <div class="media">
+          <img class="align-self-center mr-3" src="assets/images/oportunos.png" alt="Generic placeholder image">
+          <div class="media-body">
+            <h2 class="mt-0">OPORTUNOS: Estamos cuando más lo necesitas. Proceso de aprobación 48 hrs.</h2>
+          </div>
+        </div>
+      
       <br>
       <h3 class="text-center">
-        1. OPORTUNOS: Estamos cuando más lo necesitas. Proceso de aprobación 48 hrs.
+        
       </h3>
-      <br>
-      <h3 class="text-center">
-        2. SENCILLOS: En cuatro sencillos pasos sometes tu solicitud.
-      </h3>
-      <br>
-      <h3 class="text-center">
-        3. CONVENIENTES: El costo de Nuestro financiamiento es accesible.
-      </h3>
+      <div class="media">
+        <img class="align-self-center mr-3" src="assets/images/sencillos.png" alt="Generic placeholder image">
+        <div class="media-body">
+          <h2 class="mt-0">SENCILLOS: En cuatro sencillos pasos sometes tu solicitud.</h2>
+        </div>
+      </div>
+      <br>      
+      <div class="media">
+        <img class="align-self-center mr-3" src="assets/images/convenientes.png" alt="Generic placeholder image">
+        <div class="media-body">
+          <h2 class="mt-0">CONVENIENTES: El costo de Nuestro financiamiento es accesible.</h2>
+        </div>
+      </div>
       <br>
       <div class="row">
         <div class="col-md-6">
+          <div style="height:21px"></div>
           <img src="assets/images/appstore.png" class="img-fluid center-block" width="90%" />
         </div>
         <div class="col-md-6">
@@ -368,7 +381,7 @@
         <p class="text-center">All Rights Reserved AvancExpress 2017</p>
       </div>
 
-      <div class="col-md-4">        
+      <div class="col-md-4">
       </div>
     </div>
   </div>

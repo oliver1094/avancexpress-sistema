@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+.irs-bar {    
+    border-top: 1px solid #95cd00;
+    border-bottom: 1px solid #95cd00;    
+    background: #95cd00 !important;
+}
+
+.irs-bar-edge {    
+    border: 1px solid #95cd00;
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: #95cd00;
+    border-right: 0;
+    background: #95cd00;    
+}
+
+.irs-from, .irs-to, .irs-single {    
+    font-size: 10px;    
+    background: #95cd00;    
+}
+
+.irs-grid-text {
+    color: #95cd00;
+}
+
+.irs-min, .irs-max {
+    visibility: hidden !important;
+}

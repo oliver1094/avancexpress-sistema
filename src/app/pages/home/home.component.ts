@@ -43,22 +43,17 @@ public model: any = { date: { year: 2018, month: 10, day: 9 } };
     this.total = 0;
     const date = new Date();
     const dateAfter = new Date();
-    dateAfter.setDate(date.getDate() + 48);
+    dateAfter.setDate(dateAfter.getDate() + 47);
     console.log(dateAfter);
-    date.setDate(date.getDate());
+    date.setDate(date.getDate() + 48);
     console.log(date);
     this.myDatePickerOptions = {
       dateFormat: 'yyyy-mm-dd',
-      showTodayBtn: true,
-      disableSince: {
+      showTodayBtn: true,      
+      disableUntil: {
         year: dateAfter.getFullYear(),
         month: dateAfter.getMonth() + 1,
         day: dateAfter.getDate()
-      },
-      disableUntil: {
-        year: date.getFullYear(),
-        month: date.getMonth() + 1,
-        day: date.getDate()
       },
     };
   }

@@ -50,35 +50,10 @@
       </div>
       <div class="col-md-6">
         <div class="bd-round card text-white bg-title-card ml-auto" style="max-width: 27rem;">
-          <div class="card-header">HASTA EL
-            <span class="text-success font-weight-bold">25%</span> DE
-            <span class="text-success font-weight-bold">TU NÓMINA</span>
-          </div>
-          <div class="bd-round-bottom card-body bg-slide-main">
+
+          <div class="bd-round card-body bg-slide-main">
             <form class="container">
               <div class="row">
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-header">
-                    <span class="font-weight-bold">Código </span>de invitación</p>
-                </div>
-                <div class="col-md-8 pd-0">
-                  <input type="text" class="form-control bd-round" id="validationCustom01">
-                </div>
-                <div class="col-md-4 pd-0">
-                  <a [routerLink]="['../home']">
-                    <img src="/assets/images/btn-send.png" width="75" height="40" alt="">
-                  </a>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-bottom">Obtén un
-                    <span class="text-success">descuento</span> en tu
-                    <span class="text-success">comisión de apertura</span>
-                    <span class="font-italic">**aplican restricciones</span>
-                  </p>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <hr class="hr-header">
-                </div>
                 <div class="col-md-12 pd-0">
                   <p class="text-left text-header">
                     <span class="font-weight-bold">Monto </span>del Adelanto</p>
@@ -102,51 +77,84 @@
                   <hr class="hr-header">
                 </div>
               </div>
+
               <div class="row">
-                <div class="row">
-                  <div class="col">
-                    <p class="text-center text-money">
-                      Adelanto de Nómina</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      Comisión</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      Interés</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      IVA</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      Total a Pagar</p>
-                  </div>
-                  <div class="w-100"></div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      {{nomina | currency:'USD':true}}</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      {{comision | currency:'USD':true}}</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      {{interes | currency:'USD':true}}</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      {{iva | currency:'USD':true}}</p>
-                  </div>
-                  <div class="col">
-                    <p class="text-center text-money">
-                      {{total | currency:'USD':true}}</p>
-                  </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    Adelanto de Nómina</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    Comisión</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    Interés</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    IVA</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    Total a Pagar</p>
+                </div>
+                <div class="w-100"></div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    {{nomina | currency:'USD':true}}</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    {{comision | currency:'USD':true}}</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    {{interes | currency:'USD':true}}</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    {{iva | currency:'USD':true}}</p>
+                </div>
+                <div class="col">
+                  <p class="text-center text-money">
+                    {{total | currency:'USD':true}}</p>
+                </div>
+                <div class="col-md-12 pd-0">
+                  <hr class="hr-header">
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  HASTA EL
+                  <span class="text-success font-weight-bold">25%</span> DE
+                  <span class="text-success font-weight-bold">TU NÓMINA</span>
+                </div>
+                <div class="col-md-12 pd-0">
+                    <hr class="hr-header">
+                  </div>
+                <div class="col-md-12 pd-0">
+                  <p class="text-left text-header">
+                    <span class="font-weight-bold">Código </span>de invitación</p>
+                </div>
+                <div class="col-md-8 pd-0">
+                  <input type="text" class="form-control bd-round" id="validationCustom01">
+                </div>
+                <div class="col-md-4 pd-0">
+                  <a [routerLink]="['../home']">
+                    <img src="/assets/images/btn-send.png" width="75" height="40" alt="">
+                  </a>
+                </div>
+                <div class="col-md-12 pd-0">
+                  <p class="text-left text-bottom">Obtén un
+                    <span class="text-success">descuento</span> en tu
+                    <span class="text-success">comisión de apertura</span>
+                    <span class="font-italic">**aplican restricciones</span>
+                  </p>
+                </div>
+              </div>
+
             </form>
           </div>
         </div>
@@ -219,17 +227,17 @@
     <div class="col-md-5">
       <h1 class="title text-center" style="color: #531B93;">BENEFICIOS</h1>
       <hr class="intro-divider">
-      <br>      
-        <div class="media">
-          <img class="align-self-center mr-3 img-fluid" src="assets/images/oportunos.png" alt="Generic placeholder image">
-          <div class="media-body">
-            <h2 class="mt-0">OPORTUNOS: Estamos cuando más lo necesitas. Proceso de aprobación 48 hrs.</h2>
-          </div>
+      <br>
+      <div class="media">
+        <img class="align-self-center mr-3 img-fluid" src="assets/images/oportunos.png" alt="Generic placeholder image">
+        <div class="media-body">
+          <h2 class="mt-0">OPORTUNOS: Estamos cuando más lo necesitas. Proceso de aprobación 48 hrs.</h2>
         </div>
-      
+      </div>
+
       <br>
       <h3 class="text-center">
-        
+
       </h3>
       <div class="media">
         <img class="align-self-center mr-3 img-fluid" src="assets/images/sencillos.png" alt="Generic placeholder image">
@@ -237,7 +245,7 @@
           <h2 class="mt-0">SENCILLOS: En cuatro sencillos pasos sometes tu solicitud.</h2>
         </div>
       </div>
-      <br>      
+      <br>
       <div class="media">
         <img class="align-self-center mr-3 img-fluid" src="assets/images/convenientes.png" alt="Generic placeholder image">
         <div class="media-body">

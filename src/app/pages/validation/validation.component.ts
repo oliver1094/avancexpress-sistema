@@ -16,7 +16,7 @@ export class ValidationComponent {
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
   public passwords:FormGroup;
-  private array = [];
+  public array = [];
 
   public submitted:boolean = false;  
   

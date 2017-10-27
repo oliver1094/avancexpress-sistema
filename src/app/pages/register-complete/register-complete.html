@@ -1,0 +1,71 @@
+<div class="al-main">
+    <div class="al-content">
+        <div class="row margin-0">
+            <div class="col padding-0"> 
+                <img src="assets/images/topRegister.png" class="img-fluid">
+            </div>
+        </div>
+        <div class="row margin-0">
+            <div class="col text-center back-green">
+                <h1 class="title-white">
+                    REGÍSTRESE HOY
+                </h1>
+                <p>Llene el formulario que se presenta a continuación y disfrute de los beneficios de AvancExpress.</p>
+            </div>
+        </div>
+        <div class="row margin-0">
+                <div class="col text-right" style="padding-top: 20px">                    
+                    <p>¿Preguntas? Llame al +52 938 28 26734 o mande un e-mail: soporte@avancexpress.com.mx</p>
+                </div>
+            </div>
+        <div class="row margin-0" style="padding: 20px" [formGroup]="form">
+            <div class="col-6 col-sm-4">                
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Nombre</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Apellido</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Fecha">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">RFC</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="RFC">
+                    </div>            
+            </div>
+            <div class="col-6 col-sm-4">
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">CURP</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="CURP">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Teléfono</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <button type="submit" class="btn btn-default btn-block" (click)="onSubmit(form.value)">REGISTRARSE</button>
+                <br>
+                <a routerLink="/login" class="text-blue">¿Ya tiene un cuenta? Inicie sesión</a>
+            </div>
+            <div class="col-6 col-sm-4">
+                    <h5 class="list-header" style="padding-bottom:20px; padding-top:20px">Finalmente, una plataforma privada para adelantos de nómina</h5>
+                    <span>“AvancExpress me ha ayudado a solventar gastos que debido a la situación de la isla se retrasan.”</span>
+                    <div class="media" style="padding-top:60px">
+                            <img class="align-self-center mr-3 img-fluid" width="20%" src="assets/images/testigo.png" alt="Generic placeholder image">
+                            <div class="media-body">
+                              <p class="mt-0">- Luis Vázquez</p>
+                            </div>
+                          </div>
+
+            </div>
+        </div>
+    </div>
+</div>

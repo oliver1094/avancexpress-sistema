@@ -5,5 +5,18 @@
 }
 
 .modal-content {
-  color: $dropdown-text;
+  color: #ffffff;      
+  background: url('../../../../../../assets/images/backModal.png') no-repeat center center;  
+}
+
+.modal-title {
+  font-weight: 150;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.confirm-btn {
+  border-radius: 15px !important;
 }

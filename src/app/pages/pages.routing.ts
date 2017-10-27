@@ -4,7 +4,6 @@ import { ModuleWithProviders } from '@angular/core';
 // noinspection TypeScriptValidateTypes
 
 // export function loadChildren(path) { return System.import(path); };
-
 export const routes: Routes = [
   {
     path: 'home',
@@ -20,10 +19,12 @@ export const routes: Routes = [
   },
   {
     path: 'pages',
-    component: Pages,
+    component: Pages,    
     children: [
-      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: '', redirectTo: 'register-complete', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
+      { path: 'register-complete',  loadChildren: './register-complete/register-complete.module#RegisterCompleteModule' },
+      { path: 'validation',  loadChildren: './validation/validation.module#ValidationModule' },
       { path: 'editors', loadChildren: './editors/editors.module#EditorsModule' },
       { path: 'components', loadChildren: './components/components.module#ComponentsModule' },
       { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },

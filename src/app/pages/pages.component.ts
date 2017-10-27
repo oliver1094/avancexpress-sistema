@@ -8,13 +8,8 @@ import { PAGES_MENU } from './pages.menu';
   selector: 'pages',
   template: `
     <ba-sidebar></ba-sidebar>
-    <ba-page-top></ba-page-top>
-    <div class="al-main">
-      <div class="al-content">
-        <ba-content-top></ba-content-top>
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+    <ba-page-top></ba-page-top>      
+      <router-outlet></router-outlet>    
     <footer class="al-footer clearfix">
       <div class="al-footer-right" translate>{{'general.created_with'}} <i class="ion-heart"></i></div>
       <div class="al-footer-main clearfix">

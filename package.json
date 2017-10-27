@@ -86,6 +86,7 @@
     "ng2-handsontable": "0.48.0",
     "ng2-ion-range-slider": "^1.0.3",
     "ng2-page-scroll": "^4.0.0-beta.10",
+    "ng2-pdf-viewer": "^2.0.2",
     "ng2-slim-loading-bar": "4.0.0",
     "ng2-smart-table": "1.0.3",
     "ng2-tree": "2.0.0-alpha.5",

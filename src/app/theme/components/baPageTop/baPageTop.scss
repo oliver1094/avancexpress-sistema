@@ -4,14 +4,14 @@
 :host /deep/ {
 
   .page-top {
-    background-color: $sidebar;
+    background-color: #773F9B;
     position: fixed;
     z-index: 904;
     box-shadow: 2px 0 3px rgba(0, 0, 0, 0.5);
     height: 66px;
     width: 100%;
     min-width: $resMin;
-    padding: 0 32px 0 40px;
+    padding: 0 32px 0 0;
 
     .dropdown-toggle::after {
       display: none;
@@ -49,8 +49,11 @@
     margin-top: 10px;
   }
 
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+  }
   .al-user-profile {
-    float: right;
+    float: right;    
     margin-right: 12px;
     transition: all .15s ease-in-out;
     padding: 0;
@@ -135,6 +138,7 @@
   }
 
   .search {
+    color: white;
     text-shadow: none;
     font-size: 13px;
     line-height: 25px;
@@ -166,6 +170,10 @@
       margin: 0 0 0 -3px;
       height: 27px;
     }
+  }
+
+  .padding-0 {
+    padding: 0;
   }
 
   @media screen and (max-width: $resS) {

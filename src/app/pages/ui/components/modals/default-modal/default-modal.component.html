@@ -1,14 +1,25 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h4 class="modal-title">{{modalHeader}}</h4>
+    <img src="assets/images/icon-min.png" class="img-fluid" width="10%">
+    <h1 class="text-center">Términos y Condiciones</h1>
     <button class="close" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    {{modalContent}}
+    <p class="font-italic text-justify">{{modalContent}}</p>
+
   </div>
-  <div class="modal-footer">
-    <button class="btn btn-primary confirm-btn" (click)="closeModal()">Save changes</button>
+  <div class="modal-footer text-center">
+    <div class="col">
+
+    </div>
+    <div class="col">
+      <button class="btn btn-primary confirm-btn btn-lg text-center" (click)="closeModal()">Aceptar</button>
+    </div>
+    <div class="col">
+
+    </div>
+
   </div>
 </div>

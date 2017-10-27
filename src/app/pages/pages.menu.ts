@@ -3,6 +3,32 @@ export const PAGES_MENU = [
     path: 'pages',
     children: [
       {
+        path: 'register-complete',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Registro', // menu title
+            icon: 'ion-edit', // menu icon
+            // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
+        path: 'validation',  // path for our page
+        data: { // custom menu declaration
+          menu: {
+            title: 'Validación Solicitudes', // menu title
+            icon: 'ion-checkmark', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
+            selected: false,
+            expanded: false,
+            order: 0
+          }
+        }
+      },
+      {
         path: 'dashboard',
         data: {
           menu: {

@@ -1,5 +1,5 @@
 <ba-page-top></ba-page-top>
-<br>
+<br><br><br><br>
 <div class="auth-main">
   <div class="auth-block">
     <h1>Pre-Registro AvancExpress</h1>
@@ -7,32 +7,53 @@
 
     <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" class="form-horizontal">
       <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
-        <label for="inputName3" class="col-sm-2 control-label">Name</label>
+        <label class="col-sm-2 control-label">Nombre</label>
 
         <div class="col-sm-10">
-          <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Nombre Completo">
+          <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Nombre(s)">
+        </div>
+      </div>
+      <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+        <label  class="col-sm-2 control-label">Apellido</label>
+
+        <div class="col-sm-10">
+          <input [formControl]="name" type="text" class="form-control" id="inputName3" placeholder="Apellido(s)">
+        </div>
+      </div>
+      <div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+        <label  class="col-sm-2 control-label">Teléfono</label>
+
+        <div class="col-sm-10">
+          <input [formControl]="name" type="number" class="form-control" id="inputName3" placeholder="Teléfono">
         </div>
       </div>
       <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
-        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+        <label  class="col-sm-2 control-label">Email</label>
 
         <div class="col-sm-10">
           <input [formControl]="email" type="email" class="form-control" id="inputEmail3" placeholder="Email">
         </div>
       </div>
       <div class="form-group row" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
-        <label for="inputPassword3" class="col-sm-2 control-label">Contraseña</label>
+        <label  class="col-sm-2 control-label">Contraseña</label>
 
         <div class="col-sm-10">
           <input [formControl]="password" type="password" class="form-control" id="inputPassword3" placeholder="Contraseña">
         </div>
       </div>
       <div class="form-group row" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
-        <label for="inputPassword4" class="col-sm-2 control-label">Repetir Contraseña</label>
+        <label  class="col-sm-2 control-label">Repetir Contraseña</label>
 
         <div class="col-sm-10">
           <input [formControl]="repeatPassword" type="password" class="form-control" id="inputPassword4" placeholder="Repetir Contraseña">
           <span *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Las Contraseñas no son iguales.</span>
+        </div>
+      </div>
+      <div class="form-group row" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+        <label for="motive" class="col-sm-2 control-label">Motivo</label>
+
+        <div class="col-sm-10">
+          <textarea [formControl]="motive" class="form-control" id="motive" placeholder="Escribe el motivo por el cual necesitas un préstamo"></textarea>
         </div>
       </div>
       <div class="form-group row">
@@ -42,13 +63,23 @@
       </div>
     </form>
 
-    <div class="auth-sep"><span><span>or Pre-Registrate con un click</span></span></div>
+    <div class="auth-sep">
+      <span>
+        <span>or Pre-Registrate con un click</span>
+      </span>
+    </div>
 
     <div class="al-share-auth">
       <ul class="al-share clearfix">
-        <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
-        <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
-        <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+        <li>
+          <i class="socicon socicon-facebook" title="Share on Facebook"></i>
+        </li>
+        <li>
+          <i class="socicon socicon-twitter" title="Share on Twitter"></i>
+        </li>
+        <li>
+          <i class="socicon socicon-google" title="Share on Google Plus"></i>
+        </li>
       </ul>
     </div>
   </div>

@@ -139,6 +139,10 @@ a {
 .al-content {
   padding: 8px 32px 8px 40px;
 }
+.angular-gauge {
+  width: 100% !important;
+  padding: 5px;
+}
 
 @media screen and (max-width: $resXS) {
   .al-content {

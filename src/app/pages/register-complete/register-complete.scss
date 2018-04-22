@@ -1,3 +1,4 @@
+@import "../../theme/sass/conf/conf";
 .hidden-element {
     visibility: hidden;
 }
@@ -32,3 +33,24 @@ button.btn.btn-default {
     margin: 0;
 }
 
+
+
+.modal-buttons .btn {
+  margin-right: 20px;
+}
+
+.modal-content {
+  color: #ffffff; 
+}
+
+.modal-title {
+  font-weight: 150;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+.confirm-btn {
+  border-radius: 15px !important;
+}

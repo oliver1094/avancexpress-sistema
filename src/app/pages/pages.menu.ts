@@ -1,29 +1,88 @@
+import { TypeUser } from '../models/type-user';
+
 export const PAGES_MENU = [
   {
     path: 'pages',
     children: [
       {
-        path: 'register-complete',  // path for our page
+        path: ['dash-client', window.localStorage.getItem('client_id')],
         data: { // custom menu declaration
           menu: {
-            title: 'Registro', // menu title
-            icon: 'ion-edit', // menu icon
-            // use it if item children not displayed in menu
+            title: 'Dashboard', // menu title
+            icon: 'ion-android-home', // menu icon
+            pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
+            hidden: false,
             order: 0
           }
         }
+      },      
+      {
+        path: 'validations',
+        data: {
+          menu: {
+            title: 'Validaciones',
+            icon: 'ion-checkmark',
+            selected: false,
+            expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.CLIENT ? false : true,
+            order: 400,
+          }
+        },
+        children: [
+          {
+            path: 'validation-first',
+            data: {
+              menu: {
+                title: 'Validación Primera',
+              }
+            }
+          },
+          {
+            path: 'validation-second',
+            data: {
+              menu: {
+                title: 'Validación Segunda',
+              }
+            }
+          },
+          {
+            path: 'validation',
+            data: {
+              menu: {
+                title: 'Validación Tercera',
+              }
+            }
+          },
+          {
+            path: 'validation-four',
+            data: {
+              menu: {
+                title: 'Validación Cuarta',
+              }
+            }
+          },
+          {
+            path: 'validation-five',
+            data: {
+              menu: {
+                title: 'Validación Quinta',
+              }
+            }
+          }
+        ]
       },
       {
-        path: 'validation',  // path for our page
+        path: 'client-summary',  // path for our page
         data: { // custom menu declaration
           menu: {
-            title: 'Validación Solicitudes', // menu title
+            title: 'Clientes', // menu title
             icon: 'ion-checkmark', // menu icon
             pathMatch: 'prefix', // use it if item children not displayed in menu
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 0
           }
         }
@@ -36,6 +95,7 @@ export const PAGES_MENU = [
             icon: 'ion-android-home',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 0
           }
         }
@@ -48,6 +108,7 @@ export const PAGES_MENU = [
             icon: 'ion-edit',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 100,
           }
         },
@@ -70,6 +131,7 @@ export const PAGES_MENU = [
             icon: 'ion-gear-a',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 250,
           }
         },
@@ -92,6 +154,7 @@ export const PAGES_MENU = [
             icon: 'ion-stats-bars',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 200,
           }
         },
@@ -114,6 +177,7 @@ export const PAGES_MENU = [
             icon: 'ion-android-laptop',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 300,
           }
         },
@@ -176,6 +240,7 @@ export const PAGES_MENU = [
             icon: 'ion-compose',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 400,
           }
         },
@@ -206,6 +271,7 @@ export const PAGES_MENU = [
             icon: 'ion-grid',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 500,
           }
         },
@@ -234,14 +300,14 @@ export const PAGES_MENU = [
               }
             }
           },
-           {
-             path: 'hottables',
-             data: {
-               menu: {
-                 title: 'Hot Tables',
-               }
-             }
-           }
+          {
+            path: 'hottables',
+            data: {
+              menu: {
+                title: 'Hot Tables',
+              }
+            }
+          }
         ]
       },
       {
@@ -252,6 +318,7 @@ export const PAGES_MENU = [
             icon: 'ion-ios-location-outline',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 600,
           }
         },
@@ -298,6 +365,7 @@ export const PAGES_MENU = [
             icon: 'ion-document',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 650,
           }
         },
@@ -328,6 +396,7 @@ export const PAGES_MENU = [
             icon: 'ion-ios-more',
             selected: false,
             expanded: false,
+            hidden: +window.localStorage.getItem('user_type') === TypeUser.ADMIN ? false : true,
             order: 700,
           }
         },
@@ -362,19 +431,7 @@ export const PAGES_MENU = [
             ]
           }
         ]
-      },
-      {
-        path: '',
-        data: {
-          menu: {
-            title: 'general.menu.external_link',
-            url: 'http://akveo.com',
-            icon: 'ion-android-exit',
-            order: 800,
-            target: '_blank'
-          }
-        }
-      }
+      },      
     ]
   }
 ];

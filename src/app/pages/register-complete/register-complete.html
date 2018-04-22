@@ -1,8 +1,8 @@
-<div class="al-main">
-    <div class="al-content">
+<div class="container-fluid padding-0">
+    <div [formGroup]="form">
         <div class="row margin-0">
-            <div class="col padding-0"> 
-                <img src="assets/images/topRegister.png" class="img-fluid">
+            <div class="col padding-0">
+                <img src="assets/images/registerComplete.png" class="img-fluid">
             </div>
         </div>
         <div class="row margin-0">
@@ -14,56 +14,206 @@
             </div>
         </div>
         <div class="row margin-0">
-                <div class="col text-right" style="padding-top: 20px">                    
-                    <p>¿Preguntas? Llame al +52 938 28 26734 o mande un e-mail: soporte@avancexpress.com.mx</p>
+            <div class="col text-right" style="padding-top: 20px">
+                <p>¿Preguntas? Llame al +52 938 28 26734 o mande un e-mail: soporte@avancexpress.com.mx</p>
+            </div>
+        </div>
+        <div class="row margin-0" style="padding: 20px">
+            <div class="col-md-12">
+                Datos Personales
+                <hr>
+            </div>
+        </div>
+        <div class="row margin-0" style="padding: 20px">
+            <div class="col-md-4 col-sm-4">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('last_name').valid && form.get('last_name').touched), 'has-success': (form.get('last_name').valid && form.get('last_name').touched)}">
+                    <label for="exampleInputEmail1">Apellido Paterno</label>
+                    <input type="text" formControlName="last_name" class="form-control" placeholder="Apellido Paterno">
+                    <span *ngIf="!form.get('last_name').valid && (form.get('last_name').touched || form.get('last_name').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('name').valid && form.get('name').touched), 'has-success': (form.get('name').valid && form.get('name').touched)}">
+                    <label>Primer Nombre</label>
+                    <input type="text" formControlName="name" class="form-control" placeholder="Primer Nombre">
+                    <span *ngIf="!form.get('name').valid && (form.get('name').touched || form.get('name').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('birth_date').valid && form.get('birth_date').touched), 'has-success': (form.get('birth_date').valid && form.get('birth_date').touched)}">
+                    <label>Fecha de Nacimiento</label>
+                    <my-date-picker (dateChanged)="onDateChanged($event)" [defaultMonth]="defaultMonth" name="mydate" [options]="myDatePickerOptions"
+                        required></my-date-picker>
+                    <span *ngIf="!form.get('birth_date').valid && (form.get('birth_date').touched || form.get('birth_date').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('curp').valid && form.get('curp').touched), 'has-success': (form.get('curp').valid && form.get('curp').touched)}">
+                    <label>CURP</label>
+                    <input type="text" formControlName="curp" class="form-control text-uppercase" placeholder="Escriba su CURP">
+                    <span *ngIf="!form.get('curp').valid && (form.get('curp').touched || form.get('curp').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Correo electrónico</label>
+                    <input type="text" class="form-control" formControlName="email" readonly>
                 </div>
             </div>
-        <div class="row margin-0" style="padding: 20px" [formGroup]="form">
-            <div class="col-6 col-sm-4">                
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Nombre</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Apellido</label>
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="exampleInputEmail1" placeholder="Fecha">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">RFC</label>
-                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="RFC">
-                    </div>            
-            </div>
-            <div class="col-6 col-sm-4">
+            <div class="col-md-4 col-sm-4">
 
-                <div class="form-group">
-                    <label for="exampleInputEmail1">CURP</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="CURP">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('last_name_two').valid && form.get('last_name_two').touched), 'has-success': (form.get('last_name_two').valid && form.get('last_name_two').touched)}">
+                    <label>Apellido Materno</label>
+                    <input type="text" formControlName="last_name_two" class="form-control" placeholder="Apellido Materno">
+                    <span *ngIf="!form.get('last_name_two').valid && (form.get('last_name_two').touched || form.get('last_name_two').touched)"
+                        class="help-block sub-little-text" style="color:red">Campo Requerido</span>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Teléfono</label>
-                    <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Teléfono">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('name_two').valid && form.get('name_two').touched), 'has-success': (form.get('name_two').valid && form.get('name_two').touched)}">
+                    <label>Segundo Nombre</label>
+                    <input type="text" formControlName="name_two" class="form-control" placeholder="Segundo Nombre">
+                    <span *ngIf="!form.get('name_two').valid && (form.get('name_two').touched || form.get('name_two').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('rfc').valid && form.get('rfc').touched), 'has-success': (form.get('rfc').valid && form.get('rfc').touched)}">
+                    <label>RFC</label>
+                    <input type="text" formControlName="rfc" class="form-control text-uppercase" placeholder="RFC">
+                    <span *ngIf="!form.get('rfc').valid && (form.get('rfc').touched || form.get('rfc').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
                 </div>
-                <button type="submit" class="btn btn-default btn-block" (click)="onSubmit(form.value)">REGISTRARSE</button>
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('phone').valid && form.get('phone').touched), 'has-success': (form.get('phone').valid && form.get('phone').touched)}">
+                    <label>Teléfono</label>
+                    <input type="text" formControlName="phone" class="form-control" placeholder="Teléfono">
+                    <span *ngIf="!form.get('phone').valid && (form.get('phone').touched || form.get('phone').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <h5 class="list-header" style="padding-bottom:20px; padding-top:20px">Finalmente, una plataforma privada para adelantos de nómina</h5>
+                <span>“AvancExpress me ha ayudado a solventar gastos que debido a la situación de la isla se retrasan.”</span>
+                <div class="media" style="padding-top:60px">
+                    <img class="align-self-center mr-3 img-fluid" width="20%" src="assets/images/testigo.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <p class="mt-0">- Luis Vázquez</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row margin-0" style="padding: 20px">
+            <div class="col-md-12">
+                Datos Domicilio
+                <hr>
+            </div>
+        </div>
+
+        <div class="row margin-0" style="padding: 20px">
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('street_number').valid && form.get('street_number').touched), 'has-success': (form.get('street_number').valid && form.get('street_number').touched)}">
+                    <label>Calle y número</label>
+                    <input type="text" formControlName="street_number" class="form-control" placeholder="Calle y número (21 #239)">
+                    <span *ngIf="!form.get('street_number').valid && (form.get('street_number').touched || form.get('street_number').touched)"
+                        class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('colonia').valid && form.get('colonia').touched), 'has-success': (form.get('colonia').valid && form.get('colonia').touched)}">
+                    <label>Colonia o población</label>
+                    <input type="text" formControlName="colonia" class="form-control" placeholder="Colonia o Población">
+                    <span *ngIf="!form.get('colonia').valid && (form.get('colonia').touched || form.get('colonia').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('cp').valid && form.get('cp').touched), 'has-success': (form.get('cp').valid && form.get('cp').touched)}">
+                    <label>Código Postal</label>
+                    <input type="text" formControlName="cp" class="form-control" placeholder="CP">
+                    <span *ngIf="!form.get('cp').valid && (form.get('cp').touched || form.get('cp').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('municipio').valid && form.get('municipio').touched), 'has-success': (form.get('municipio').valid && form.get('municipio').touched)}">
+                    <label>Municipio</label>
+                    <input type="text" formControlName="municipio" class="form-control" placeholder="Municipio">
+                    <span *ngIf="!form.get('municipio').valid && (form.get('municipio').touched || form.get('municipio').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('state').valid && form.get('state').touched), 'has-success': (form.get('state').valid && form.get('state').touched)}">
+                    <label>Estado</label>
+                    <input type="text" formControlName="state" class="form-control" placeholder="Estado">
+                    <span *ngIf="!form.get('state').valid && (form.get('state').touched || form.get('state').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+                <div class="form-group" [ngClass]="{'has-error': (!form.get('city').valid && form.get('city').touched), 'has-success': (form.get('city').valid && form.get('city').touched)}">
+                    <label>Ciudad</label>
+                    <input type="text" formControlName="city" class="form-control" placeholder="Ciudad">
+                    <span *ngIf="!form.get('city').valid && (form.get('city').touched || form.get('city').touched)" class="help-block sub-little-text"
+                        style="color:red">Campo Requerido</span>
+                </div>
+
+
+                <button data-toggle="modal" data-target="#exampleModal" class="btn btn-default btn-block">REGISTRARSE</button>
                 <br>
                 <a routerLink="/login" class="text-blue">¿Ya tiene un cuenta? Inicie sesión</a>
             </div>
-            <div class="col-6 col-sm-4">
-                    <h5 class="list-header" style="padding-bottom:20px; padding-top:20px">Finalmente, una plataforma privada para adelantos de nómina</h5>
-                    <span>“AvancExpress me ha ayudado a solventar gastos que debido a la situación de la isla se retrasan.”</span>
-                    <div class="media" style="padding-top:60px">
-                            <img class="align-self-center mr-3 img-fluid" width="20%" src="assets/images/testigo.png" alt="Generic placeholder image">
-                            <div class="media-body">
-                              <p class="mt-0">- Luis Vázquez</p>
-                            </div>
-                          </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <img src="assets/images/icon-min.png" class="img-fluid" width="10%">
+                <h2 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="font-italic text-justify">
+                    Los datos personales y sensibles que los usuarios proporcionen al momento de su ingreso y/o registro al Sitio tienen como
+                    finalidad el crear un expediente y facilitar el acceso a su cuenta, así como a su configuración, como
+                    el cargar y descargar videos, fotos, sonidos, etc. La recopilación de datos se llevará a cabo única y
+                    exclusivamente a través de los formularios publicados en la web y de aquellos existentes de forma física
+                    en las oficinas de AvancExpress y se podrán verificar vía telefónica o por medios electrónicos. En caso
+                    de no contar con los datos señalados, AvancExpress no estaría en posibilidad de proporcionar su servicio,
+                    ya que los datos que se solicitan son indispensables para dar acceso y uso a la página web., (i) con
+                    previo consentimiento del usuario, podrá compartir y/o proporcionar la información financiera, comercial,
+                    operativa y personal del Usuario, así como la relativa a cualquier actividad que se promueve en el Sitio;
+                    y (ii) autoriza para que su información pueda ser utilizada por AvancExpress con fines mercadotécnicos
+                    y/o publicitarios, o para cumplimentar con las obligaciones contractuales contraídas con el usuario.
+                    El ingreso y/o registro a través del Sitio implica el consentimiento pleno y sin reservas de los usuarios
+                    para el tratamiento de sus datos personales de acuerdo con el presente Aviso de Privacidad. AvancExpress
+                    cuenta con medidas físicas, técnicas y administrativas de seguridad para la protección de Datos Personales
+                    proporcionados por los usuarios. En cumplimiento a la Ley Federal de Protección de Datos Personales en
+                    Posesión de los Particulares, AvancExpress ofrece el siguiente medio de contacto, y el siguiente procedimiento,
+                    para acceder, rectificar, cancelar u oponer (ARCO) sus datos personales: Acceso (A) y Rectificación (R):
+                    Para acceder a su información, el usuario deberá ingresar al Sitio, dar clic en “Iniciar Sesión” y llenar
+                    sus datos con los cuales registró su cuenta. Los datos podrá verlos en su panel de control, y específicamente
+                    en la sección “Mi Cuenta”, en la parte superior derecha de la pantalla. El usuario podrá rectificar sus
+                    datos personales en esta misma sección. AvancExpress se reserva el derecho de verificar la veracidad
+                    de la información antes de realizar o autorizar el cambio. Cualquier duda sobre este procedimiento, favor
+                    de enviar un correo electrónico a _______________ o llamar al ___________ y LADA sin costo al _____________
+                    Cancelación (C) y Oposición (O): El usuario tiene la facultad de eliminar su información en forma directa.
+                    Para ello, deberá ingresar a su cuenta en la dirección www.____________.com, y elegir la opción "Mi Cuenta"
+                    en el menú de la parte _________ de su panel. En la parte __________, deberá dar clic en "Eliminar Cuenta"
+                    y confirmar la eliminación con la contraseña que creó al registrarse. Los usuarios que tengan una relación
+                    jurídica con AvancExpress, como créditos activos o saldo en su cuenta de prestatario, no podrán eliminar
+                    su cuenta. AvancExpress podrá mantener información sobre la actividad del usuario en el portal para fines
+                    estadísticos, sin que esto suponga la retención de datos de identificación, documentos, o información
+                    sensible. AvancExpress se reserva la posibilidad de mantener datos requeridos para ejercer sus políticas
+                    de negocio, como evitar que solicitantes de crédito completen una nueva solicitud en menos de 6 meses
+                    si la solicitud original ha sido rechazada.
+                </p>
+            </div>
+            <div class="modal-footer text-center">
+                <div class="col">
+
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary confirm-btn btn-lg text-center" data-dismiss="modal" (click)="onSubmit()">Aceptar</button>
+                </div>
+                <div class="col">
+
+                </div>
 
             </div>
         </div>

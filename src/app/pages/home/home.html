@@ -1,397 +1,75 @@
-<!-- Just an image -->
-<div style="height:60px"></div>
-<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:white">
-  <a class="navbar-brand" href="#">
-    <img src="/assets/images/icon.png" width="135" height="30" alt="">
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-right">
-
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['../home']">INICIO</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a pageScroll class="nav-link" [pageScrollDuration]="500" href="#section-1">REQUISITOS</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a pageScroll class="nav-link" [pageScrollDuration]="500" href="#section-2">BENEFICIOS</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a pageScroll class="nav-link" [pageScrollDuration]="500" href="#section-3">CONTACTO</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['../login']">LOGIN</a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-
+<navbar></navbar>
 <!-- ************************************************Header -->
-<!-- Header -->
-<a name="about"></a>
-<div class="intro-header">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="intro-message">
-          <img src="assets/images/slogan.png" class="img-fluid">
-        </div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/images/icon-min.png" width="40" height="30" alt="">
+        <h2 class="modal-title" id="exampleModalLabel">Pre-Registro AvancExpress</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="col-md-6">
-        <div class="bd-round card text-white bg-title-card ml-auto" style="max-width: 27rem;">
-
-          <div class="bd-round card-body bg-slide-main">
-            <form class="container">
-              <div class="row">
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-header">
-                    <span class="font-weight-bold">Monto </span>del Adelanto</p>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <ion-range-slider #sliderElement step="500" min="0" max="10000" grid="true" grid_num="10" decorate_both="false" (onChange)="onInputChange($event)"></ion-range-slider>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <hr class="hr-header">
-                </div>
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-header">
-                    <span class="font-weight-bold">Fecha </span>de Pago</p>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <form novalidate>
-                    <my-date-picker name="mydate" [options]="myDatePickerOptions" required></my-date-picker>
-                  </form>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <hr class="hr-header">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col">
-                  <p class="text-center text-money">
-                    Adelanto de Nómina</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    Comisión</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    Interés</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    IVA</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    Total a Pagar</p>
-                </div>
-                <div class="w-100"></div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    {{nomina | currency:'USD':true}}</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    {{comision | currency:'USD':true}}</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    {{interes | currency:'USD':true}}</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    {{iva | currency:'USD':true}}</p>
-                </div>
-                <div class="col">
-                  <p class="text-center text-money">
-                    {{total | currency:'USD':true}}</p>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <hr class="hr-header">
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-md-12">
-                  HASTA EL
-                  <span class="text-success font-weight-bold">25%</span> DE
-                  <span class="text-success font-weight-bold">TU NÓMINA</span>
-                </div>
-                <div class="col-md-12 pd-0">
-                    <hr class="hr-header">
-                  </div>
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-header">
-                    <span class="font-weight-bold">Código </span>de invitación</p>
-                </div>
-                <div class="col-md-8 pd-0">
-                  <input type="text" class="form-control bd-round" id="validationCustom01">
-                </div>
-                <div class="col-md-4 pd-0">
-                  <a [routerLink]="['../home']">
-                    <img src="/assets/images/btn-send.png" width="75" height="40" alt="">
-                  </a>
-                </div>
-                <div class="col-md-12 pd-0">
-                  <p class="text-left text-bottom">Obtén un
-                    <span class="text-success">descuento</span> en tu
-                    <span class="text-success">comisión de apertura</span>
-                    <span class="font-italic">**aplican restricciones</span>
-                  </p>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2 ml-md-auto"></div>
-          <div class="col-md-10 ml-md-auto">
-            <button style="margin-top: 10px" class="btn btn-success">PRE - REGISTRATE</button>
-          </div>
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </div>
-  <!-- /.container -->
-
-</div>
-<!-- /.intro-header*************************************** -->
-
-<div class="section-2" id="section-1">
-  <div class="container">
-
-    <div class="row">
-      <div class="col-xs-6 col-md-7">
-
-      </div>
-      <div class="col-xs-12 col-md-5">
-        <h1 style="color:grey; font-size: 35pt !important;">REQUISITOS</h1>
-        <hr class="intro-divider">
-
-
-        <div class="section-min-1">
-          IFE POR AMBOS LADOS
-        </div>
-        <div class="section-min-2">
-          ESTADOS DE CUENTA Y CLABE
-          <br>INTERBANCARIA
-        </div>
-        <div class="section-min-3">
-          3 REFERENCIAS PERSONALES CON
-          <br>NOMBRE COMPLETO Y TELÉFONO
-        </div>
-        <div class="section-min-4">
-          COMPROBANTE DE DOMICILIO
-        </div>
-        <div class="section-min-5">
-          ÚLTIMOS 2 RECIBOS DE NÓMINA
-        </div>
-        <div class="section-min-6">
-          E-MAIL, CELULAR Y TELÉFONO FIJO
-        </div>
-
-
+      <div class="modal-body">
+        <app-pre-register [dataPrestamo]="form.value"></app-pre-register>
       </div>
     </div>
-
-  </div>
-  <!-- /.container -->
-
-</div>
-
-
-<br>
-<br>
-<div class="container-fluid" id="section-2">
-  <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-5">
-      <h1 class="title text-center" style="color: #531B93;">BENEFICIOS</h1>
-      <hr class="intro-divider">
-      <br>
-      <div class="media">
-        <img class="align-self-center mr-3 img-fluid" src="assets/images/oportunos.png" alt="Generic placeholder image">
-        <div class="media-body">
-          <h2 class="mt-0">OPORTUNOS: Estamos cuando más lo necesitas. Proceso de aprobación 48 hrs.</h2>
-        </div>
-      </div>
-
-      <br>
-      <h3 class="text-center">
-
-      </h3>
-      <div class="media">
-        <img class="align-self-center mr-3 img-fluid" src="assets/images/sencillos.png" alt="Generic placeholder image">
-        <div class="media-body">
-          <h2 class="mt-0">SENCILLOS: En cuatro sencillos pasos sometes tu solicitud.</h2>
-        </div>
-      </div>
-      <br>
-      <div class="media">
-        <img class="align-self-center mr-3 img-fluid" src="assets/images/convenientes.png" alt="Generic placeholder image">
-        <div class="media-body">
-          <h2 class="mt-0">CONVENIENTES: El costo de Nuestro financiamiento es accesible.</h2>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-6">
-          <div style="height:16.5px"></div>
-          <img src="assets/images/appstore.png" class="img-fluid center-block" width="90%" />
-        </div>
-        <div class="col-md-6">
-          <img src="assets/images/playstore.png" class="img-fluid center-block" width="100%" />
-        </div>
-      </div>
-
-    </div>
-    <div class="col-md-6">
-      <img src="assets/images/iphone.png" class="img-fluid">
-    </div>
-  </div>
-
-</div>
-
-
-<div class="container-fluid" id="section4">
-  <div class="row">
-    <div class="col-md-4" style="background-color: #B43C8F; height: 850px">
-      <h1 class="title text-left" style="color: white; font-size: 45pt; padding-top: .43em">¿CÓMO?
-      </h1>
-      <h1 class="title text-center" style="color: white">
-        <br>1
-      </h1>
-      <br>
-      <img src="assets/images/2.png" class="rounded mx-auto d-block" width="40%" />
-      <div class="col">
-        <p class="text-center info-p">
-          Regístrate y sube tus documentos en nuestra página ó con nuestra app de forma rápida y segura.
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4" style="background-color: #4AAEEF; height: 850px">
-      <h1 class="title text-center" style="color: white; padding-top: 4.1em">2
-      </h1>
-      <br>
-      <img src="assets/images/3.png" class="rounded mx-auto d-block" width="40%" />
-      <div class="col">
-        <p class="text-center info-p">
-          Espera un correo electrónico de confirmación
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4" style="background-color: #94C83D; height: 850px">
-      <h1 class="title text-center" style="color: white; padding-top: 4.1em">3
-      </h1>
-      <br>
-      <img src="assets/images/4.png" class="rounded mx-auto d-block" width="40%" />
-      <div class="col">
-        <p class="text-center info-p">
-          Acude a tu sucursal más cercana a realizar el trámite y ¡disfruta de tu nómina adelantada!
-        </p>
-      </div>
-    </div>
-
   </div>
 </div>
 
-<div class="section-5">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-1">
-
+<div class="modal fade" id="cuponRestrictive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/images/icon-min.png" width="40" height="30" alt="">
+        <h2 class="modal-title" id="exampleModalLabel">Aviso</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="col-md-6">
-        <hr class="intro-divider-top">
+      <div class="modal-body">
+        <p style="color:white" class="text-justify">La validez/Elegibilidad del usuario para calificar para recibir el descuento de un Cupón será revisada y calificada
+          al momento de la contratación.
+        </p>
+        <p style="color:white" class="text-justify">
+          Las condiciones de uso de los cupones estarán sujetas a cambios sin previo aviso.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">ACEPTAR</button>
       </div>
     </div>
-    <div class="row" id="section5">
-      <div class="col-md-12">
-
-        <h1 class="title title-min text-center" style="color: white">RESPUESTA EN MENOS DE 48 HRS
-        </h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-1">
-
-      </div>
-      <div class="col-md-8">
-        <hr class="intro-divider-bottom">
-      </div>
-    </div>
-  </div>
-
-</div>
-<br>
-<div id="section-3">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 class="title text-left" style="color: #531B93">CONTACTO</h1>
-        <p style="font-size: 14pt">
-          <img src="assets/images/17.png"> E-mail:
-          <a href="mailto:contacto@avancexpress.com.mx">contacto@avancexpress.com.mx</a>
-          <br>
-        </p>
-        <p style="font-size: 14pt">
-          <img src="assets/images/18.png"> Tel. 938 131 4749 Ext. 127
-          <br>
-
-        </p>
-        <p style="font-size: 14pt">
-          <img src="assets/images/19.png"> Whatsapp: 938 123 1561
-          <br>
-        </p>
-        <p style="font-size: 14pt">
-          <img src="assets/images/20.png"> Ciudades: Durango, Durango & Cd. del Carmen, Campeche.
-        </p>
-
-
-      </div>
-    </div>
-
   </div>
 </div>
 
-<br>
-<br>
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <div class="text-center">
-          <a href="#">
-            <img src="assets/images/slogan2.png" alt="AvancExpress" class="img-fluid" width="70%">
-          </a>
-        </div>
-
+<div class="modal fade" id="montoRestrictive" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="assets/images/icon-min.png" width="40" height="30" alt="">
+        <h2 class="modal-title" id="exampleModalLabel">Aviso</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-      <div class="col-md-4">
-        <p class="text-center">All Rights Reserved AvancExpress 2017</p>
+      <div class="modal-body">
+        <p style="color:white" class="text-justify">*Cálculo para efectos informativos y no constituye obligación u ofrecimiento por parte de Avancexpress Contigo S
+          de R.L. de C.V., en el otorgamiento del crédito.
+        </p>
+        <p style="color:white" class="text-justify">
+          El cálculo específico por operación se entrega al momento de la contratación. Las condiciones de los préstamos estarán sujetas
+          a cambios sin previo aviso.
+        </p>
+        <p style="color:white" class="text-justify">
+          Las condiciones de los préstamos estarán sujetas a cambios sin previo aviso.
+        </p>
       </div>
-
-      <div class="col-md-4">
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal">ACEPTAR</button>
       </div>
     </div>
   </div>
-</footer>
+</div>

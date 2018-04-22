@@ -1,5 +1,5 @@
 import {Component, ViewChild, Input, Output, EventEmitter, ElementRef, Renderer} from '@angular/core';
-import { NgUploaderOptions } from 'ngx-uploader';
+import { UploaderOptions } from 'ngx-uploader';
 
 @Component({
   selector: 'ba-picture-uploader',
@@ -11,7 +11,7 @@ export class BaPictureUploader {
   @Input() defaultPicture:string = '';
   @Input() picture:string = '';
 
-  @Input() uploaderOptions:NgUploaderOptions = { url: '' };
+  
   @Input() canDelete:boolean = true;
 
   @Output() onUpload = new EventEmitter<any>();
@@ -71,6 +71,6 @@ export class BaPictureUploader {
   }
 
   _canUploadOnServer():boolean {
-    return !!this.uploaderOptions['url'];
+    return false;
   }
 }

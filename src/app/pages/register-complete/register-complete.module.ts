@@ -8,6 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { DefaultModal } from '../ui/components/modals/default-modal/default-modal.component';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { MyDatePickerModule } from 'mydatepicker';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgaModule,
     NgbModalModule,
-    routing
+    routing,
+    MyDatePickerModule
   ],
   declarations: [
     RegisterCompleteComponent,

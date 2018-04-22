@@ -6,8 +6,7 @@
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
     text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/background1.jpg) no-repeat center center;
+    color: #f8f8f8;    
     background-size: cover;
 }
 
@@ -30,8 +29,6 @@
     background-color: #0e3d89!important;
 }
 
-
-
 .text-header {
     font-size: 9pt;
     padding: 0;
@@ -43,7 +40,11 @@
     font-size: 7.5pt;
     padding: 0;
     font-weight: 100;
-    margin-bottom: 0;
+    margin-bottom: 0;    
+}
+.text-money-big {
+    font-weight: bold;
+    font-size: 8.5pt;
 }
 .text-bottom {
     font-size: 8pt;
@@ -102,16 +103,7 @@
     background-color: black;
 }
 
-.footer { 
-    bottom: 0;
-    width: 100%;    
-    line-height: 60px;
-    background-color: #f5f5f5;
-}
 
-.footer > .container {    
-    padding-top: 1.5rem;
-}
 
 .info-p {
     font-size: 25pt;
@@ -123,8 +115,14 @@
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
     padding-bottom: 50px;
     text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/5.png) no-repeat center center;
+    color: #f8f8f8;    
+    background-size: cover;
+}
+
+.section-banner {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;    
+    color: #f8f8f8;    
     background-size: cover;
 }
 
@@ -140,68 +138,6 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.section-2 {
-    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/requisitos.png) no-repeat center center;
-    background-size: cover;
-}
-
-.section-min-1 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/8.png) no-repeat center center;
-    background-size: contain;
-}
-
-.section-min-2 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/9.png) no-repeat center center;
-    background-size: contain;
-}
-
-.section-min-3 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/10.png) no-repeat center center;
-    background-size: contain;
-}
-
-.section-min-4 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/11.png) no-repeat center center;
-    background-size: contain;
-}
-
-.section-min-5 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/12.png) no-repeat center center;
-    background-size: contain;
-}
-
-.section-min-6 {
-    padding-top: 35px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 35px;
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../../../assets/images/13.png) no-repeat center center;
-    background-size: contain;
-}
 
 .card > .card-header {
     color: white;
@@ -213,6 +149,95 @@
 }
 
 .title-min {
-    font-size: 35pt;
+    font-size: 29pt;
     font-weight: 150;
 }
+
+.modal-content {
+    background: #0e3d89 !important;
+}
+
+.modal-title {
+    text-align: center;
+    color: #95cd00;
+}
+
+.text-banner {
+    font-size: 20pt;
+    color: white;
+    font-weight: 150;
+}
+
+.text-banner-body {
+    font-size: 15pt;
+    padding-top: 10px;
+    font-weight: 100;
+    line-height: 1.5em;
+}
+
+.text-banner-sub {
+    font-size: 13pt;
+    font-weight: 100;
+}
+
+.active-nav {
+    background-color: #0e3d89;
+    color:white !important;    
+}
+
+.nav-link {    
+    padding: 1.3rem 1rem !important;        
+}
+
+.red-orange-brown {
+    background-image: linear-gradient(to right, red, orange 50%, brown);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .green-yellowgreen-yellow-gold {
+    background-image: linear-gradient(to right, green, yellowgreen 33%, yellow 66%, gold);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 17pt;
+    font-weight: bold;
+  }
+
+  #gradiente {
+    background: rgba(186,27,141,1);
+background: -moz-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(186,27,141,1)), color-stop(24%, rgba(14,61,137,1)), color-stop(50%, rgba(0,197,232,1)), color-stop(74%, rgba(150,214,0,1)), color-stop(100%, rgba(197,255,51,1)));
+background: -webkit-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -o-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -ms-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: linear-gradient(to right, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba1b8d', endColorstr='#c5ff33', GradientType=1 );
+}
+
+.section-banner-1 {
+    background-color: #Ed179e;
+    padding-top: 20px;    
+}
+
+.section-sub-banner-1 {
+    background-color: #ee5ea0;     
+}
+
+.section-banner-2 {
+    background-color: #071f45;
+    padding-top: 20px;    
+}
+
+.section-sub-banner-2 {
+    background-color: #0e3d89;
+    padding-top: 15px;
+    padding-bottom: 5px
+}
+
+.mydp .selection {
+    color:white !important;
+    background-color: black !important;
+  }
+
+  

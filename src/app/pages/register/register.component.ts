@@ -12,6 +12,7 @@ export class Register {
   public form:FormGroup;
   public name:AbstractControl;
   public email:AbstractControl;
+  public motive:AbstractControl;
   public password:AbstractControl;
   public repeatPassword:AbstractControl;
   public passwords:FormGroup;
@@ -23,6 +24,7 @@ export class Register {
     this.form = fb.group({
       'name': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'email': ['', Validators.compose([Validators.required, EmailValidator.validate])],
+      'motive': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
       'passwords': fb.group({
         'password': ['', Validators.compose([Validators.required, Validators.minLength(4)])],
         'repeatPassword': ['', Validators.compose([Validators.required, Validators.minLength(4)])]
@@ -31,6 +33,7 @@ export class Register {
 
     this.name = this.form.controls['name'];
     this.email = this.form.controls['email'];
+    this.motive = this.form.controls['motive'];
     this.passwords = <FormGroup> this.form.controls['passwords'];
     this.password = this.passwords.controls['password'];
     this.repeatPassword = this.passwords.controls['repeatPassword'];

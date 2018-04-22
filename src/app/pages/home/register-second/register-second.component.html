@@ -1,0 +1,240 @@
+<!-- MultiStep Form -->
+<div class="container-fluid section-register">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="assets/images/news/31.svg" class="mx-auto d-block" width="60%">
+      <h2 class="title">DATOS PERSONALES</h2>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+  <div [formGroup]="form">
+    <div class="row">
+      <div class="col-md-4 padding-form">
+        <div class="col-md-6" [ngClass]="{'has-error': (!form.get('sex').valid && form.get('sex').touched), 'has-success': (form.get('sex').valid && form.get('sex').touched)}">
+          <div class="media">
+            <div class="media-body">
+              <p class="label-text">SEXO
+              </p>
+            </div>
+            <button [ngClass]="{'deselected': !form.get('sex').value}" class="btn button-male" (click)="isMale(true)"></button>
+            <button [ngClass]="{'deselected': !isFemale}" class="btn button-female" (click)="isMale(false)"></button>
+          </div>
+          <span *ngIf="!form.get('sex').valid && (form.get('sex').touched || form.get('sex').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('curp').valid && form.get('curp').touched), 'has-success': (form.get('curp').valid && form.get('curp').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="curp" aria-describedby="basic-addon1" class="text-uppercase back-input form-control with-primary-addon"
+              placeholder="CURP" type="text">
+            <a href="https://consultas.curp.gob.mx/CurpSP/inicio2_2.jsp" target="_blank">
+              <button class="btn btn-info btn-icon btn-sm" type="button">
+                <i class="ion-information"></i>
+              </button>
+            </a>
+          </div>
+          <span *ngIf="!form.get('curp').valid && (form.get('curp').touched || form.get('curp').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('phone').valid && form.get('phone').touched), 'has-success': (form.get('phone').valid && form.get('phone').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/37.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="phone" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="TELÉFONO"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('phone').valid && (form.get('phone').touched || form.get('phone').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('cp').valid && form.get('cp').touched), 'has-success': (form.get('cp').valid && form.get('cp').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="cp" (keyup)="setCity($event)" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon"
+              placeholder="CÓDIGO POSTAL" type="text">
+          </div>
+          <span *ngIf="!form.get('cp').valid && (form.get('cp').touched || form.get('cp').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('state').valid && form.get('state').touched), 'has-success': (form.get('state').valid && form.get('state').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/38.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="state" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="ESTADO"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('state').valid && (form.get('state').touched || form.get('state').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('city').valid && form.get('city').touched), 'has-success': (form.get('city').valid && form.get('city').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/38.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="city" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="CIUDAD"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('city').valid && (form.get('city').touched || form.get('city').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('colonia').valid && form.get('colonia').touched), 'has-success': (form.get('colonia').valid && form.get('colonia').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="colonia" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="COLONIA/DELEGACIÓN"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('colonia').valid && (form.get('colonia').touched || form.get('colonia').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('home_num').valid && form.get('home_num').touched), 'has-success': (form.get('home_num').valid && form.get('home_num').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="home_num" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="NÚMERO INTERIOR / EXTERIOR"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('home_num').valid && (form.get('home_num').touched || form.get('home_num').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+      </div>
+      <div class="col-md-4 padding-form">
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('birth_date').valid && form.get('birth_date').touched), 'has-success': (form.get('birth_date').valid && form.get('birth_date').touched)}">
+
+          <my-date-picker placeholder="FECHA DE NACIMIENTO" (dateChanged)="onDateChanged($event)" [defaultMonth]="defaultMonth" name="mydate"
+            [options]="myDatePickerOptions" required></my-date-picker>
+          <span *ngIf="!form.get('birth_date').valid && (form.get('birth_date').touched || form.get('birth_date').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('rfc').valid && form.get('rfc').touched), 'has-success': (form.get('rfc').valid && form.get('rfc').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="rfc" aria-describedby="basic-addon1" class="text-uppercase back-input form-control with-primary-addon"
+              placeholder="RFC" type="text">
+          </div>
+          <span *ngIf="!form.get('rfc').valid && (form.get('rfc').touched || form.get('rfc').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('home_type').valid && form.get('home_type').touched), 'has-success': (form.get('home_type').valid && form.get('home_type').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="home_type" class="form-control back-input" id="exampleSelect1">
+              <option value="" selected disabled>TIPO DE VIVIENDA</option>
+              <option>PROPIA</option>
+              <option>RENTADA</option>
+              <option>HIPOTECA</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('home_type').valid && (form.get('home_type').touched || form.get('home_type').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('plan_type').valid && form.get('plan_type').touched), 'has-success': (form.get('plan_type').valid && form.get('plan_type').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="plan_type" class="form-control back-input with-primary-addon" id="exampleSelect1">
+              <option value="" selected disabled>TIPO DE PLAN</option>
+              <option>PRE-PAGO</option>
+              <option>TARIFARIO</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('plan_type').valid && (form.get('plan_type').touched || form.get('plan_type').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+
+
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('dependent').valid && form.get('dependent').touched), 'has-success': (form.get('dependent').valid && form.get('dependent').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="dependent" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="N. DE DEPENDIENTES ECONÓMICOS"
+              type="number" min="0" max="100" step="1">
+          </div>
+          <span *ngIf="!form.get('dependent').valid && (form.get('dependent').touched || form.get('dependent').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('company_phone').valid && form.get('company_phone').touched), 'has-success': (form.get('company_phone').valid && form.get('company_phone').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/35.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="company_phone" class="form-control back-input with-primary-addon" id="exampleSelect1">
+              <option value="" selected disabled>COMPAÑÍA CELULAR</option>
+              <option>Telcel</option>
+              <option>AT&T</option>
+              <option>Movistar</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('company_phone').valid && (form.get('company_phone').touched || form.get('company_phone').touched)"
+            class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('civil_state').valid && form.get('civil_state').touched), 'has-success': (form.get('civil_state').valid && form.get('civil_state').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="civil_state" class="form-control back-input with-primary-addon">
+              <option value="" selected disabled>ESTADO CIVIL</option>
+              <option>SOLTERO</option>
+              <option>CASADO</option>
+              <option>UNIÓN LIBRE</option>
+              <option>DIVORCIADO</option>
+              <option>VIUDO</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('civil_state').valid && (form.get('civil_state').touched || form.get('civil_state').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 padding-form">
+      <div class="media">
+        <div class="media-body">
+          <p class="label-text">¿TIENE
+            <span style="color:#0e3d89">TARJETA DE CRÉDITO</span> VIGENTE?</p>
+        </div>
+        <button [ngClass]="{'deselected': !form.get('is_credit_card').value}" class="btn button-check" (click)="isCreditCard(true)"></button>
+        <button [ngClass]="{'deselected': !isc}" class="btn button-denied" (click)="isCreditCard(false)"></button>
+      </div>
+      <span *ngIf="!form.get('is_credit_card').valid && (form.get('is_credit_card').touched || form.get('is_credit_card').touched)"
+        class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+      <div class="media">
+        <div class="media-body">
+          <p class="label-text">¿TIENES O HAS TENIDO ALGÚN
+            <span style="color:#0e3d89">CRÉDITO HIPOTECARIO</span>?
+          </p>
+        </div>
+        <button [ngClass]="{'deselected': !form.get('is_credit_hip').value}" class="btn button-check" (click)="isCreditHip(true)"></button>
+        <button [ngClass]="{'deselected': !isch}" class="btn button-denied" (click)="isCreditHip(false)"></button>
+      </div>
+      <span *ngIf="!form.get('is_credit_hip').valid && (form.get('is_credit_hip').touched || form.get('is_credit_hip').touched)"
+        class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+      <div class="media">
+        <div class="media-body">
+          <p class="label-text">¿TIENES O HAS TENIDO ALGÚN
+            <span style="color:#0e3d89">CRÉDITO AUTOMOTRIZ</span>?
+          </p>
+        </div>
+        <button [ngClass]="{'deselected': !form.get('is_credit_auto').value}" class="btn button-check" (click)="isCreditAuto(true)"></button>
+        <button [ngClass]="{'deselected': !isca}" class="btn button-denied" (click)="isCreditAuto(false)"></button>
+      </div>
+      <span *ngIf="!form.get('is_credit_auto').valid && (form.get('is_credit_auto').touched || form.get('is_credit_auto').touched)"
+        class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+      <div class="media">
+        <div class="media-body">
+          <p class="label-text">¿HAS ESTADO EN
+            <span style="color:#0e3d89">BURO DE CRÉDITO</span>?
+          </p>
+        </div>
+        <button [ngClass]="{'deselected': !form.get('is_buro').value}" class="btn button-check" (click)="isCreditBuro(true)"></button>
+        <button [ngClass]="{'deselected': !isb}" class="btn button-denied" (click)="isCreditBuro(false)"></button>
+      </div>
+      <span *ngIf="!form.get('is_buro').valid && (form.get('is_buro').touched || form.get('is_buro').touched)" class="help-block sub-little-text"
+        style="color:red">Campo Requerido</span>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 padding-form"></div>
+    <div class="col-md-4 text-right padding-form">
+      <div class="form-group">
+        <button class="btn btn-default" (click)="onSubmit()"></button>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

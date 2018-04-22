@@ -1,0 +1,75 @@
+@font-face {
+    font-family: bebasneue;
+    src: url('../../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.title{
+    font-family: 'bebasneue';
+    font-size: 35pt;
+    padding-top: 30px;
+}
+
+.label-text {
+    font-family: 'bebasneue';
+    font-size: 15pt;  
+    padding-top: 20px;      
+}
+
+.padding {
+    padding: 70px 10px 30px 10px;
+}
+
+.section-register {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */    
+    background: url(../../../../assets/images/news/end.png) no-repeat;
+    background-size: cover;
+}
+
+.padding-form {
+    padding: 5px 40px 5px 40px
+}
+
+.addon-left {
+    padding: 0 !important;
+    border: none !important;
+    background-color: black;
+}
+
+.addon-right {
+    padding: 0 !important;
+    border: none !important;
+    background-color: black;
+}
+
+.back-input {    
+    background-color: black;
+    color: white;        
+}
+:-moz-placeholder {
+    color:white;
+    opacity: 100%;
+}
+
+::-moz-placeholder {
+    color:white;
+    opacity: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+button.btn.btn-default {
+    background: url(../../../../assets/images/news/32.svg) no-repeat !important;    
+    background-size: cover !important;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    border-radius: 12px;
+    border:none;
+}

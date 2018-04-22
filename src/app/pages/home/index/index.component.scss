@@ -1,0 +1,286 @@
+.nav-item {
+    padding-left: 2em;
+}
+
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../../../../assets/images/news/77.svg) no-repeat center center;
+    background-size: cover;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin: 0;
+    font-size: 4em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #164F86;
+}
+
+.bg-slide-main {
+    background-color: #0e3d89!important;
+}
+
+.text-header {
+    font-size: 15pt;
+    padding:10px 0 0 0;
+    font-weight: 200;
+    margin-bottom: 0;
+    font-family: 'bebasneue'    
+}
+
+.text-money {
+    font-size: 13pt;
+    padding: 0;
+    font-weight: 100;
+    margin-bottom: 0;    
+    font-family: 'bebasneue';
+}
+.text-money-big {
+    font-family: 'bebasneue';
+    font-size: 13pt;
+}
+.text-bottom {
+    font-size: 8pt;
+    padding: 0;
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: bebasneue;
+    src: url('../../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.bd-round {
+    border-radius: 15px !important;    
+    background: url(../../../../assets/images/backAzul.png) no-repeat;
+    background-size: cover;     
+    font-family: 'bebasneue';
+}
+
+.bd-round-bottom {
+    border-bottom-right-radius:  15px !important;
+    border-bottom-left-radius:  15px !important;
+}
+
+.back-input {
+    background-color: #0e3d89;
+    border: none;
+    color:white;
+}
+
+.pd-0 {
+    padding: 0;
+}
+
+.hr-header {    
+    width: 100%;
+    border-top: 3px solid #00ffff;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.text-success {
+    color: #95cd00!important;
+    line-height: 1;
+}
+
+.btn-success {
+    background-color: #95cd00!important;
+    border-radius: 15px
+}
+.mat-slider-horizontal {
+    width: 100%;
+    height: 50px;
+  }
+  
+  .mat-slider-vertical {
+    height: 400px;
+  }
+
+  .mat-accent .mat-slider-thumb .mat-accent .mat-slider-thumb-label .mat-accent .mat-slider-track-fill {
+    background-color: #95cd00 !important;
+}  
+
+.mat-slider-horizontal .mat-slider-wrapper {
+    height: 20px !important;
+}
+
+.mat-slider-wrapper {
+    height: 20px !important;
+}
+.mat-slider-thum {
+    background-color: black;
+}
+
+
+
+.info-p {
+    font-size: 25pt;
+    color:white;
+    line-height: 1.5;
+}
+
+.section-banner {
+    padding-top: 30px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */    
+    background: url(../../../../assets/images/news/03.svg) no-repeat;
+    background-size: cover;    
+}
+
+.intro-divider-top {
+    width: 100%;
+    border-top: 5px solid #97C93C;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.intro-divider-bottom {
+    width: 100%;
+    border-top: 5px solid #EB5DA1;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+
+.card > .card-header {
+    color: white;
+    background-color: #003a55 !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.title-min {
+    font-size: 45pt;
+    font-weight: 150;
+    font-family: 'bebasneue';
+}
+
+.modal-content {
+    background: #0e3d89 !important;
+}
+
+.modal-title {
+    text-align: center;
+    color: #95cd00;
+}
+
+.text-banner {
+    font-size: 20pt;
+    color: white;
+    font-weight: 150;
+}
+
+.text-banner-body {
+    font-size: 15pt;
+    padding-top: 10px;
+    font-weight: 100;
+    line-height: 1.5em;
+}
+
+.text-banner-sub {
+    font-size: 13pt;
+    font-weight: 100;
+}
+
+.active-nav {
+    background-color: #0e3d89;
+    color:white !important;    
+}
+
+.nav-link {    
+    padding: 1.3rem 1rem !important;        
+}
+
+.red-orange-brown {
+    background-image: linear-gradient(to right, red, orange 50%, brown);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .green-yellowgreen-yellow-gold {
+    background-image: linear-gradient(to right, green, yellowgreen 33%, yellow 66%, gold);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-size: 23pt;
+    font-weight: bold;
+    font-family: 'bebasneue';
+  }
+
+  #gradiente {
+    background: rgba(186,27,141,1);
+background: -moz-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(186,27,141,1)), color-stop(24%, rgba(14,61,137,1)), color-stop(50%, rgba(0,197,232,1)), color-stop(74%, rgba(150,214,0,1)), color-stop(100%, rgba(197,255,51,1)));
+background: -webkit-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -o-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: -ms-linear-gradient(left, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+background: linear-gradient(to right, rgba(186,27,141,1) 0%, rgba(14,61,137,1) 24%, rgba(0,197,232,1) 50%, rgba(150,214,0,1) 74%, rgba(197,255,51,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ba1b8d', endColorstr='#c5ff33', GradientType=1 );
+}
+
+.section-banner-1 {
+    background-color: #Ed179e;
+    padding-top: 20px;    
+}
+
+.section-sub-banner-1 {
+    background-color: #ee5ea0;   
+    padding-top: 10px;  
+}
+
+.section-banner-2 {
+    background-color: #071f45;
+    padding-top: 20px;    
+}
+
+.section-sub-banner-2 {
+    background-color: #0e3d89;
+    padding-top: 22px;
+    padding-bottom: 5px
+}
+
+:-moz-placeholder {
+    color: #3e8ede;    
+    text-align: center;
+  }
+  
+  ::-moz-placeholder {
+    color: #3e8ede;    
+    text-align: center;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #3e8ede;
+    text-align: center;
+  }
+  
+  :-ms-input-placeholder {
+    color: #3e8ede;
+    text-align: center;
+  }
+
+  .button-register {    
+        background: url(../../../../assets/images/news/09.svg) no-repeat !important;    
+        background-size: cover !important;
+        padding-left: 142px;
+    padding-right: 130px;
+    padding-bottom: 150px;
+    padding-top: 31px;  
+        border:none;
+       
+  }
+
+  .content-vertical {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+

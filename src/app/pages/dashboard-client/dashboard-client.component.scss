@@ -1,0 +1,205 @@
+@font-face {
+    font-family: bebasneue;
+    src: url('../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.hidden-element {
+    visibility: hidden;
+}
+
+
+
+.section-register {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */    
+    background: url(../../../assets/images/news/21.svg) no-repeat;
+    background-size: cover;
+}
+
+.back-green {
+    background-color: #70BF41;
+}
+
+.title-white {
+    color: #ffffff;
+}
+
+button.btn.btn-default {
+    border-width: 2px;
+    color: #51A7F9;    
+    border-color: #51A7F9;
+}
+
+.text-blue {
+    color: #51A7F9;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #53585F;
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: gray;
+}
+
+.hero.is-fullheight .hero-body, .hero.is-halfheight .hero-body {
+    align-items: center;
+    display: flex;
+}
+.hero-body, .section {
+    padding: 3rem 1.5rem;
+}
+.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.columns.is-multiline {
+    flex-wrap: wrap;
+}
+
+.hero .drop-container {
+    background: #fff;
+    border-radius: 6px;
+    height: 150px;
+    width: 100%;
+    box-shadow: 1px 2px 20px hsla(0,0%,4%,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #c0c4c7;
+}
+
+.hero .drop-container p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #c0c4c7;
+    padding: 10px;
+}
+
+.hero .drop-container p .upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5754a3;
+}
+
+.hero .drop-container p .upload-button input {
+    display: none;    
+}
+
+.upload-button input {
+    display: none;    
+}
+.upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5754a3;
+}
+
+.hero .upload-items .upload-item {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+.hero .upload-items .upload-item .filename {
+    display: block;
+    padding: 0 0 5px 5px;
+    color: #74809d;
+}
+
+.title{
+    font-family: 'bebasneue';
+    font-size: 35pt;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .title-one{
+    font-family: 'bebasneue';
+    font-size: 15pt;
+    padding-top: 20px;
+    text-align: center;
+    color:black;
+  }
+
+.border {
+    border-color: #70BF41 !important;
+    border-width: 3px;
+}
+
+.circle-green {
+    width: 10px;
+    height: 10px;
+    background: #60dc4d;
+    margin-top:10px;
+}
+
+.circle-blue-one {
+    width: 10px;
+    height: 10px;
+    background: #44e0ac;
+    margin-top:10px;
+}
+
+.circle-blue-two {
+    width: 10px;
+    height: 10px;
+    background: #00c7e8;
+    margin-top:10px;
+}
+
+.circle-purple {
+    width: 10px;
+    height: 10px;
+    background: #0e3d89;
+    margin-top:10px;
+}
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.bd-card {    
+    background: url(../../../assets/images/news/106.svg) no-repeat;
+    background-size: cover;     
+    font-family: 'bebasneue';
+}
+
+.list-group-item {    
+    background-color: #c0c4c7;
+    color: #0e3d89;
+    font-weight: bold;        
+    border-top: 1px solid rgba(9, 248, 236, 0.932);
+}
+
+.list-group-item-active {    
+    background: url(../../../assets/images/news/107.svg) no-repeat;
+    background-size: cover;      
+    color: white;
+    font-weight: bold;    
+    border:none;
+}
+
+.badge-square {
+    border-radius: 2px;
+    font-size: 100%;
+}
+
+.body-dash {
+    padding-top: 30px;
+}

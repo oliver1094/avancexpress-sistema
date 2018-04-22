@@ -1,0 +1,127 @@
+<div class="container-fluid section-register padding fadeIn fast">
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <img src="assets/images/news/16.svg" class="mx-auto d-block" width="40%">
+      <h2 class="title">REGISTRO</h2>
+
+      <form [formGroup]="form" class="padding-form">
+        <div class="form-group" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="name" type="text" class="form-control back-input with-primary-addon" placeholder="PRIMER NOMBRE">
+          </div>
+          <span style="color:red" *ngIf="!name.valid && (name.touched || name.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!name_two.valid && name_two.touched), 'has-success': (name_two.valid && name_two.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="name_two" type="text" class="form-control back-input with-primary-addon" placeholder="SEGUNDO NOMBRE">
+          </div>
+          <span style="color:red" *ngIf="!name_two.valid && (name_two.touched || name_two.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!last_name.valid && last_name.touched), 'has-success': (last_name.valid && last_name.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="last_name" type="text" class="form-control back-input with-primary-addon" placeholder="PRIMER APELLIDO">
+          </div>
+          <span style="color:red" *ngIf="!last_name.valid && (last_name.touched || last_name.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!last_name_two.valid && last_name_two.touched), 'has-success': (last_name_two.valid && last_name_two.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="last_name_two" type="text" class="form-control back-input with-primary-addon" placeholder="SEGUNDO APELLIDO">
+          </div>
+          <span style="color:red" *ngIf="!last_name_two.valid && (last_name_two.touched || last_name_two.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <!--<div class="form-group row" [ngClass]="{'has-error': (!name.valid && name.touched), 'has-success': (name.valid && name.touched)}">
+                    <label class="col-sm-12 control-label">Teléfono</label>
+              
+                    <div class="col-sm-12">
+                      <input [formControl]="phone" type="number" class="form-control" id="inputName3" placeholder="Teléfono">
+                      <span *ngIf="!phone.valid && (phone.touched || phone.touched)" class="help-block sub-little-text">Campo Requerido</span>
+                    </div>
+                  </div>-->
+        <div class="form-group" [ngClass]="{'has-error': (!email.valid && email.touched), 'has-success': (email.valid && email.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="email" type="email" class="form-control back-input with-primary-addon" placeholder="CORREO ELECTRÓNICO">
+            <div *ngIf="emailError">
+              <p style="color: red">EMAIL YA REGISTRADO</p>
+            </div>
+          </div>
+          <span style="color: red" *ngIf="!email.valid && (email.touched || email.touched)" class="help-block sub-little-text">Campo Requerido o Email Invalido</span>
+
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!password.valid && password.touched), 'has-success': (password.valid && password.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+
+            <input [formControl]="password" type="password" class="form-control back-input with-primary-addon" placeholder="CONTRASEÑA">
+
+          </div>
+          <span style="color: red" *ngIf="!password.valid && (password.touched || password.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!repeatPassword.valid && repeatPassword.touched), 'has-success': (repeatPassword.valid && repeatPassword.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input [formControl]="repeatPassword" type="password" class="form-control back-input with-primary-addon" placeholder="CONFIRMAR CONTRASEÑA">
+          </div>
+          <span style="color: red" *ngIf="!passwords.valid && (password.touched || repeatPassword.touched)" class="help-block sub-little-text">Las Contraseñas no son iguales.</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!monto_salario.valid && monto_salario.touched), 'has-success': (monto_salario.valid && monto_salario.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input (keypress)="onChangeMonto($event)" currencyMask [options]="{ prefix: '$ ', thousands: ',', decimal: '.', align: 'left'}"
+              [formControl]="monto_salario" class="form-control back-input with-primary-addon" id="monto_salario" placeholder="SALARIO">
+          </div>
+          <span style="color: red" *ngIf="!monto_salario.valid && (monto_salario.touched || monto_salario.touched)" class="help-block sub-little-text">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!monto.valid && monto.touched), 'has-success': (monto.valid && monto.touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/34.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input currencyMask pattern="[500]*" [options]="{ prefix: '$ ', thousands: ',', decimal: '.', align: 'left'}" [formControl]="monto"
+              class="form-control back-input with-primary-addon" id="monto" placeholder="MONTO A PRESTAR" value="''">
+          </div>
+          <span style="color: red" *ngIf="!monto.valid && (monto.touched || monto.touched)" class="help-block sub-little-text">Campo Requerido o el monto es mayor a 25% del salario</span>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-12 control-label dias" style="color:rgba(182, 182, 182, 0.562);font-size:17pt">Plazo</label>          
+          <div class="col-md-12">
+            <label class="text-header">
+              <input type="radio" (change)="onChange($event)" [checked]="true" [value]="1" name="plazo"> <span class="dias" style="color:#3e8ede">30 <span style="color:rgba(182, 182, 182, 0.562)">DÍAS</span></span>
+            </label>
+            <label class="text-header">
+              <input type="radio" (change)="onChange($event)" [value]="2" name="plazo"> <span class="dias" style="color:#3e8ede">45 <span style="color:rgba(182, 182, 182, 0.671)">DÍAS</span></span>
+            </label>
+            <!--<label class="text-header">
+                          31 dias
+                          <ui-switch (change)="onChange($event)" [checked]="false" size="small"></ui-switch> 45 dias
+                        </label>-->
+          </div>
+        </div>
+        <!--<div class="form-group row" [ngClass]="{'has-error': (!telfijo.valid && telfijo.touched), 'has-success': (telfijo.valid && telfijo.touched)}">
+                    <label class="col-sm-12 control-label">Teléfono fijo</label>
+                    <div class="col-sm-12">
+                      <input [formControl]="telfijo" type="number" class="form-control" id="inputPassword4" placeholder="Teléfono fijo">
+                      <span *ngIf="!telfijo.valid && (telfijo.touched || telfijo.touched)" class="help-block sub-little-text">Campo Requerido</span>
+                    </div>
+                  </div>
+                  <div class="form-group row" [ngClass]="{'has-error': (!motive.valid && motive.touched), 'has-success': (motive.valid && motive.touched)}">
+                    <label class="col-sm-12 control-label">Motivo</label>
+              
+                    <div class="col-sm-12">
+                      <textarea [formControl]="motive" class="form-control" id="motive" placeholder="Escribe el motivo por el cual necesitas un préstamo"></textarea>
+                      <span *ngIf="!motive.valid && (motive.touched || motive.touched)" class="help-block sub-little-text">Campo Requerido</span>
+                    </div>
+                  </div>-->
+
+        <div *ngIf="successForm">
+          <p class="auth-link" style="color: #95cd00; font-size:22px; line-height:1.2">Su Registro ha sido exitoso, en breve recibirá un correo electrónico para finalizar su registro</p>
+        </div>
+        <div class="form-group">
+          <button (click)="onSubmit()" class="btn btn-default"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

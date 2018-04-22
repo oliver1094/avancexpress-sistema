@@ -1,0 +1,411 @@
+<!-- Header -->
+<div class="animated fadeIn fast">
+  <a name="about" id="inicio"></a>
+  <div trackScroll (trackScrollEnter)="enterInicio()" (trackScrollLeave)="leaveInicio()" class="intro-header fadeInLeft">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6 content-vertical">
+          <img src="assets/images/news/75.svg" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+
+          <div class="bd-round card text-white bg-title-card ml-auto" style="max-width: 29rem; margin-top:70px">
+
+            <div class="bd-round card-body bg-slide-main">
+              <form [formGroup]="form" class="container">
+                <div class="row">
+                  <div class="col-md-12" style="font-size: 25pt; padding-top:10px;padding-bottom:35px">
+                    HASTA EL
+                    <span class="text-success font-weight-bold">25%</span> DE
+                    <span class="text-success font-weight-bold">TU NÓMINA</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 pd-0">
+                    <p class="text-left text-header">
+                      MONTO DEL
+                      <span class="text-success">ADELANTO</span>
+                    </p>
+                  </div>
+                  <div class="col-md-12 pd-0">
+
+                    <div class="row">
+                      <div class="col-12">
+                        <ion-range-slider #sliderElement step="500" min="0" max="10000" grid="true" grid_num="10" decorate_both="false" (onChange)="onInputChange($event)"></ion-range-slider>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 pd-0">
+                    <hr class="hr-header">
+                  </div>
+
+
+                  <!--<my-date-picker (dateChanged)="onDateChanged($event)" name="mydate" [options]="myDatePickerOptions" required></my-date-picker>-->
+
+                  <div class="col-md-12 pd-0">
+                    <div *ngIf="isCupon">
+                      <p class="text-left text-header">
+                        <span class="font-weight-bold" style="color:#94C83D">Cupón aplicado</span>
+                      </p>
+                    </div>
+                    <div *ngIf="!isCuponAplicado">
+                      <p class="text-left text-header">
+                        <span class="font-weight-bold" style="color:red">Cupón Inexistente o ya aplicado</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-2 pd-0">
+                    <p class="text-left text-header">
+                      <span class="font-weight-bold">Cupones</span>
+                    </p>
+                  </div>
+                  <div class="col-7 pd-0">
+                    <input type="text" placeholder="INGRESE SU CÓDIGO" formControlName="cupon" class="form-control back-input" id="validationCustom01">
+                  </div>
+                  <div class="col-3 pd-0">
+                    <button style="background: none;
+                  border: 0;" (click)="aplyDesc()">
+                      <img src="assets/images/news/60.svg" width="75" height="35" alt="">
+                    </button>
+                  </div>
+                  <div class="col-md-12 pd-0">
+                    <p class="text-left text-bottom">
+                      OBTÉN UN
+                      <span style="color:#95cd00 !important">DESCUENTO</span> EN TU
+                      <span style="color:#95cd00 !important">COMISIÓN DE APERTURA</span> | CÁLCULO PARA FINES INFORMATIVOS/ILUSTRATIVOS
+                      <br>
+                      <a href="#" style="color:#95cd00 !important" data-toggle="modal" data-target="#cuponRestrictive">**Aplican restricciones[Hacer Click]</a>
+                    </p>
+                  </div>
+                  <div class="col-2 pd-0">
+                    <p class="text-left text-header">
+                      <span class="text-success">PAGAR</span>
+                      EN
+                    </p>
+                  </div>
+                  <div class="col-10 text-left">
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="text-header">
+                              <input type="radio" (change)="onChange($event)" [checked]="true" [value]="1" name="plazo"> 30 dias
+                            </label>
+                          </div>
+                          <div class="col-4 pd-0">
+                            <label class="text-header">
+                              <input type="radio" (change)="onChange($event)" [value]="2" name="plazo"> 45 dias
+                            </label>
+                          </div>
+                    </div>
+                    
+
+                    <!--<label class="text-header">
+                    31 dias
+                    <ui-switch (change)="onChange($event)" [checked]="false" size="small"></ui-switch> 45 dias
+                  </label>-->
+                  </div>
+
+                  <div class="col-md-12 pd-0">
+                    <hr class="hr-header">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <p class="text-center text-money">
+                      MONTO A PAGAR</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-center text-money">
+                      IVA</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-center text-money">
+                      TOTAL A
+                      <span style="color:#95d600">PAGAR</span>
+                    </p>
+                  </div>
+                  <div class="w-100"></div>
+                  <div class="col">
+                    <p class="text-center text-money text-money-big">
+                      {{nomina | currency:'USD':true}}</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-center text-money text-money-big">
+                      {{iva | currency:'USD':true}}</p>
+                  </div>
+                  <div class="col">
+                    <p class="text-center text-money text-money-big">
+                      {{total | currency:'USD':true}}</p>
+                  </div>
+                  <div class="col-md-12 pd-0">
+                    <p class="text-right text-bottom">
+                      Cálculo hecho a {{dias}} días
+                      <br>
+                      <a href="#" style="color:#95cd00 !important" data-toggle="modal" data-target="#montoRestrictive">**Aplican restricciones[Hacer Click]</a>
+                    </p>
+                    <p class="text-left text-bottom">
+
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!--<div class="bd-round card text-white bg-title-card ml-auto" style="max-width: 29rem; margin-top:20px">
+          <div class="bd-round card-body bg-slide-main">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12 pd-0">
+                  <p class="text-left text-header">
+                    <span class="font-weight-bold">Código </span>de invitación</p>
+                </div>
+                <div class="col-md-8 pd-0">
+                  <input type="text" class="form-control bd-round" id="validationCustom01">
+                </div>
+                <div class="col-md-4 pd-0">
+                  <a [routerLink]="['../home']">
+                    <img src="assets/images/btn-send.png" width="75" height="40" alt="">
+                  </a>
+                </div>
+                <div class="col-md-12 pd-0">
+                  <p class="text-left text-bottom">Obtén un
+                    <span class="text-success">descuento</span> en tu
+                    <span class="text-success">comisión de apertura</span>
+                    <span class="font-italic">**aplican restricciones</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>-->
+          <div class="row" style="margin-bottom:40px">
+            <div class="col-md-2 ml-md-auto"></div>
+            <div class="col-md-10 ml-md-auto">
+              <button style="margin-top: 10px" (click)="goRegister()" class="btn btn-success" style="background-color: #004703!important;
+            border-radius: 15px;
+            border: none !important;
+            padding-bottom: 0">
+                <span class="green-yellowgreen-yellow-gold">¡SOLICITA TU ADELANTO!</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+
+  </div>
+  <!-- /.intro-header*************************************** -->
+
+  <div class="container-fluid section-banner-1">
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10" style="padding-top: 30px;padding-bottom: 30px;">
+        <div class="section-sub-banner-1">
+          <h1 class="title title-min text-center" style="color: white">
+            ¡¡OBTÉN HASTA EL
+            <span style="color:#ccff50">25%</span>
+            <span style="color:#95d600"> DE TU NÓMINA</span> DE MANERA
+            <span style="color:#95d600">INMEDIATA</span>!!
+          </h1>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 pd-0">
+        <div style="height: 8px" id="gradiente">
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div trackScroll (trackScrollEnter)="enterBeneficios()" (trackScrollLeave)="leaveBeneficios()" class="container-fluid section-banner"
+    id="section-2">
+    <div class="row" style="padding-bottom: 50px;">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+        <br>
+
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/04.svg" class="align-self-center mr-3" width="60px" height="60px">
+          <div class="media-body">
+            <h2 class="mt-0" style="color:#4AAEEF;font-weight:bold">RÁPIDO</h2>
+            <p>Obtén tu dinero de
+              <span style="font-weight:bold">manera inmediata y sin complicaciones.</span>
+            </p>
+          </div>
+        </div>
+
+        <br>
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/05.svg" class="align-self-center mr-3" width="60px" height="60px">
+          <div class="media-body">
+            <h2 class="mt-0" style="color:#95d600;font-weight:bold">SENCILLO</h2>
+            <p>
+              <span style="font-weight:bold">Fácil y ágil</span> proceso de aprobación, así tendrás el dinero que necesitas de
+              <span style="font-weight:bold">manera instantánea.</span>
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/06.svg" class="align-self-center mr-3" width="60px" height="60px">
+          <div class="media-body">
+            <h2 class="mt-0" style="color:#EB5DA1;font-weight:bold">TRANSPARENTE</h2>
+            <p>Somos
+              <span style="font-weight:bold">sinónimos de calidad</span> al ofrecer la mejor experiencia financiera para sus clientes.</p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="assets/images/news/07.svg" class="img-fluid center-block" width="90%" />
+          </div>
+          <div class="col-md-6">
+            <img src="assets/images/news/08.svg" class="img-fluid center-block" width="90%" />
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <img src="assets/images/news/02.svg" class="float-left" width="84%" style="position: absolute;top: -97px;">
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container-fluid section-banner-2">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6" style="padding-top: 30px;padding-bottom: 30px;">
+        <div class="section-sub-banner-2">
+          <h1 class="title title-min text-center" style="color: white;font-size:30pt">
+            COMIENZA TU SOLICITUD AHORA,
+            <span style="color:#95d600"> SOLO NECESITAS</span>:
+          </h1>
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/10.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">Identificación oficial
+              <br>
+              <span style="font-weight:bold">(IFE/INE)</span>
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/11.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">Cuenta bancaria a tu nombre con
+              <br>
+              <span style="font-weight:bold">número CLABE</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/12.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">Comprobante de Domicilio
+              <br>
+              <span style="font-weight:bold">(Vigente)</span>
+            </p>
+          </div>
+        </div>
+        <br>
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/13.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">Estado de cuenta bancario completo
+              <br>con vigencia
+              <span style="font-weight:bold"> no mayor a dos meses</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/14.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">
+              <br>
+              <span style="font-weight:bold">RFC</span>
+            </p>
+          </div>
+        </div>
+
+        <br>
+        <div class="media">
+          <img style="margin-right: 15px" src="assets/images/news/15.svg" class="align-self-center mr-3" width="40px" height="40px">
+          <div class="media-body">
+            <p class="mb-0" style="color:white">Recibos de Nóminas
+              <br>
+              <span style="font-weight:bold">(Últimos dos)</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-3">
+        <a (click)="goRegister()">
+          <img src="assets/images/news/09.svg" class="btn float-left" width="80%">
+        </a>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 pd-0">
+        <div style="height: 8px" id="gradiente">
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--<div id="section-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="title text-left" style="color: #531B93">CONTACTO</h1>
+        <p style="font-size: 14pt">
+          <img src="assets/images/17.png"> E-mail:
+          <a href="mailto:contacto@avancexpress.com.mx">contacto@avancexpress.com.mx</a>
+          <br>
+        </p>
+        <p style="font-size: 14pt">
+          <img src="assets/images/18.png"> Tel. 938 131 4749 Ext. 127
+          <br>
+
+        </p>
+        <p style="font-size: 14pt">
+          <img src="assets/images/19.png"> Whatsapp: 938 123 1561
+          <br>
+        </p>
+        <p style="font-size: 14pt">
+          <img src="assets/images/20.png"> Ciudades: Durango, Durango & Cd. del Carmen, Campeche.
+        </p>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>-->
+</div>

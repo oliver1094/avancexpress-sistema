@@ -1,0 +1,86 @@
+<div class="al-main">
+    <div class="al-content">
+        <div class="row margin-0">
+            <div class="col-md-2 col-sm-6" style="padding-top: 20px">
+                <div *ngFor="let client of clientsArray; let i = index">
+                    <div class="card" *ngIf="client.val_four && client.status === 'pending'">
+                        <div class="card-body" [ngClass]="{'bg-custom text-white': selectedIndex == i}" (click)="onSelectClient(i, client)">
+                            <img [src]="client.image" class="img-fluid" width="10%"> {{ client.name }} {{ client.last_name }}
+                            <small class="text-right"> {{ client.date | date:'short' }}</small>
+                            <div class="row">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    <p style="padding-top:10px">
+                                        Solicitud de aprobación
+                                        <br> Se requiere su aprobación para realizarle un pago a {{ client.name }} {{ client.last_name
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent" style="padding:5px">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" (click)="onAccepted(client.id, i)" class="btn btn-success">DISPERSAR</button>
+                                    <button type="submit" (click)="onRejected(client.id, i)" class="btn btn-danger">Denegar</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="row text-center">
+                    <h2 style="padding-top:20px">Archivos Clientes</h2>
+                </div>
+                <div *ngIf="archivosAlreadyUpdatedC.length > 0">
+                    <div *ngIf="archivosAlreadyUpdated.length > 0">
+                        <div *ngFor="let file of archivosAlreadyUpdated">
+                            <div *ngIf="file.isIfe" style="padding-top:20px">
+                                <h2 style="color:brown">IFE</h2>
+                                <a [href]="file.url" target="_blank">{{ file.nombreArchivo}}</a>
+                                <pdf-viewer [src]="file.url" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                                    [show-all]="true"></pdf-viewer>
+                                <div *ngIf="(file.url.indexOf('png') !== -1) || (file.url.indexOf('jpg') !== -1)  || 
+                                    (file.url.indexOf('JPG') !== -1)  || (file.url.indexOf('PNG') !== -1)">
+                                    <img [src]="file.url" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="archivosAlreadyUpdatedC.length > 0" class="scroll">
+                    <div *ngIf="archivosAlreadyUpdated.length > 0">
+                        <div *ngFor="let file of archivosAlreadyUpdated" style="padding-top:20px">
+                            <a [href]="file.url" target="_blank">{{ file.nombreArchivo}}</a>
+                            <pdf-viewer [src]="file.url" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                                [show-all]="true"></pdf-viewer>
+                            <div *ngIf="(file.url.indexOf('png') !== -1) || (file.url.indexOf('jpg') !== -1)  || 
+                                (file.url.indexOf('JPG') !== -1)  || (file.url.indexOf('PNG') !== -1)">
+                                <img [src]="file.url" class="img-fluid">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="row text-center">
+                    <h2 style="padding-top:20px">Contratos Originales</h2>
+                </div>
+                <div *ngIf="archivosAlreadyUpdatedC.length > 0" class="scroll">
+                    <pdf-viewer [src]="pdfSrc" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                        [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_1" [render-text]="true" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_2" [render-text]="true" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

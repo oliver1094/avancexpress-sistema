@@ -1,0 +1,150 @@
+.hidden-element {
+    visibility: hidden;
+}
+
+.al-content {
+    padding: 0 !important;
+}
+
+.back-green {
+    background-color: #70BF41;
+}
+
+.title-white {
+    color: #ffffff;
+}
+
+button.btn.btn-default {
+    border-width: 2px;
+    color: #51A7F9;    
+    border-color: #51A7F9;
+}
+
+.text-blue {
+    color: #51A7F9;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #53585F;
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: gray;
+}
+
+.bg-custom {
+    background-color: #0e3d89;
+}
+
+
+.title-white {
+    color: #ffffff;
+}
+
+button.btn.btn-default {
+    border-width: 2px;
+    color: #51A7F9;    
+    border-color: #51A7F9;
+}
+
+.text-blue {
+    color: #51A7F9;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #53585F;
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: gray;
+}
+
+.hero.is-fullheight .hero-body, .hero.is-halfheight .hero-body {
+    align-items: center;
+    display: flex;
+}
+.hero-body, .section {
+    padding: 3rem 1.5rem;
+}
+.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.columns.is-multiline {
+    flex-wrap: wrap;
+}
+
+.hero .drop-container {
+    background: #fff;
+    border-radius: 6px;
+    height: 150px;
+    width: 100%;
+    box-shadow: 1px 2px 20px hsla(0,0%,4%,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #c0c4c7;
+}
+
+.hero .drop-container p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #c0c4c7;
+    padding: 10px;
+}
+
+.hero .drop-container p .upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5754a3;
+}
+
+.hero .drop-container p .upload-button input {
+    display: none;    
+}
+
+.upload-button input {
+    display: none;    
+}
+.upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5754a3;
+}
+
+.hero .upload-items .upload-item {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+.hero .upload-items .upload-item .filename {
+    display: block;
+    padding: 0 0 5px 5px;
+    color: #74809d;
+}

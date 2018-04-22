@@ -1,0 +1,134 @@
+<div class="al-main">
+    <div class="al-content">
+        <div class="row margin-0">
+            <div class="col-md-2 col-sm-6" style="padding-top: 20px">
+                <div *ngFor="let client of clientsArray; let i = index">
+                    <div class="card" *ngIf="client.val_first && client.val_second && !client.val_third">
+                        <div class="card-body" [ngClass]="{'bg-custom text-white': selectedIndex == i}" (click)="onSelectClient(i, client)">
+                            <img [src]="client.image" class="img-fluid" width="10%"> {{ client.name }} {{ client.last_name }}
+                            <small class="text-right"> {{ client.date | date:'short' }}</small>
+                            <div class="row">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    <p style="padding-top:10px">
+                                        Solicitud de aprobación
+                                        <br> Se requiere su aprobación para realizarle un pago a {{ client.name }} {{ client.last_name
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent" style="padding:5px">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" (click)="onAccepted(client.id, i)" class="btn btn-success">Validar</button>
+                                    <button type="submit" (click)="onRejected(client.id, i)" class="btn btn-danger">Denegar</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="row text-center">
+                    <h2 style="padding-top:20px">Archivos Escaneados</h2>
+                </div>
+                <div *ngIf="archivosAlreadyUpdatedC.length > 0">
+                    <div class="hero is-fullheight">
+                        <div class="hero-body">
+                            <div class="container">
+                                <div class="columns is-multiline">
+                                    <div class="column is-8 is-offset-2">
+                                        <div class="drop-container" ngFileDrop [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput">
+                                            <p>
+                                                Arrastra un archivo o
+                                                <label class="upload-button">
+                                                    <input type="file" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)" [uploadInput]="uploadInput" multiple> Busca
+                                                </label>
+                                                un archivo para subir
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="column is-8 is-offset-2">
+                                        <!--<div class="upload-items">
+                                                                <div class="upload-item" *ngFor="let f of files1; let i = index;">
+                                                                    <span class="filename">
+                                                                        <span>{{ f.name }} ({{ f.id }}) - {{ f.progress?.data?.percentage }}%</span>
+                                                                        <span>subiendo con {{ f.progress?.data?.speedHuman }}</span>
+                                                                        <span>ETA {{ f.progress?.data?.etaHuman }}</span>
+                                                                    </span>
+                                                                    <div class="progress">
+                                                                        <div class="progress-bar bg-success" role="progressbar" [style.width]="f?.progress?.data?.percentage + '%'" aria-valuenow="25"
+                                                                            aria-valuemin="0" aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngFor="let f of files1; let i = index;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="filename">
+                                    <p>
+                                        <span>{{ f.name }}</span>
+                                    </p>
+                                    <br>
+                                </span>
+
+                            </div>
+                            <div class="col-md-6">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" [style.width]="f?.progress?.data?.percentage + '%'" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success" (click)="startUpload()">Subir Archivos Seleccionados</button>
+                    </div>
+                    <div *ngIf="archivosAlreadyUpdated.length > 0">
+                        <div *ngFor="let file of archivosAlreadyUpdated" style="padding-top:10px">
+                            <a [href]="file.url" target="_blank">{{ file.nombreArchivo}}</a>
+                            <pdf-viewer [src]="file.url" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                                [show-all]="true"></pdf-viewer>
+                            <div *ngIf="(file.url.indexOf('png') !== -1) || (file.url.indexOf('jpg') !== -1)  || 
+                                                    (file.url.indexOf('JPG') !== -1)  || (file.url.indexOf('PNG') !== -1)">
+                                <img [src]="file.url" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="font-weight-bold">PDF's</p>
+                        <div *ngFor="let file of archivosAlreadyUpdatedC">
+                            <div *ngIf="file.url">
+                                <br>
+                                <a [href]="file.url" target="_blank">{{ file.nombreArchivo}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="archivosAlreadyUpdatedC.length > 0">
+                    <pdf-viewer [src]="pdfSrc" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                        [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_1" [render-text]="true" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_2" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

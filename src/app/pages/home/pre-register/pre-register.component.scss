@@ -1,0 +1,104 @@
+@font-face {
+  font-family: bebasneue;
+  src: url('../../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.title{
+  font-family: 'bebasneue';
+  font-size: 35pt;
+  padding-top: 20px;
+}
+
+.dias{
+  font-family: 'bebasneue';
+  font-size: 17pt;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.padding {
+  padding: 70px 10px 30px 10px;
+}
+
+.section-register {
+  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */    
+  background: url(../../../../assets/images/news/20.svg) no-repeat;
+  background-size: cover;
+}
+
+.padding-form {
+  padding: 5px 40px 5px 40px
+}
+
+.addon-left {
+  padding: 0 !important;
+  border: none !important;
+  background-color: black;
+}
+
+.back-input {    
+  background-color: black;
+  color: white;        
+}
+:-moz-placeholder {
+  color:white;
+  opacity: 100%;
+}
+
+::-moz-placeholder {
+  color:white;
+  opacity: 100%;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-ms-input-placeholder {
+  color: white;
+}
+
+button.btn.btn-default {
+  background: url(../../../../assets/images/news/19.svg) no-repeat !important;    
+  background-size: cover !important;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 12px;
+  border:none;
+}
+
+
+.mydp .selection,
+.mydp .weekdaytitle,
+.mydp .monthinput,
+.mydp .yearinput {
+    font-weight: normal;
+}
+.mydp .weekdaytitle {
+    color: #000;
+}
+.mydp,
+.mydp .selectiongroup,
+.mydp .selection,
+.mydp .selector {
+    border-radius: 4px;
+}
+.mydp .header {
+    border-radius: 4px 4px 0 0;
+}
+.mydp .caltable {
+    border-radius: 0 0 4px 4px;
+}
+.mydp .caltable tbody tr:nth-child(6) td:first-child {
+    border-bottom-left-radius: 4px;
+}
+.mydp .caltable tbody tr:nth-child(6) td:last-child {
+    border-bottom-right-radius: 4px;
+}
+.mydp .btnpicker {
+    border-radius: 0 4px 4px 0;
+}
+

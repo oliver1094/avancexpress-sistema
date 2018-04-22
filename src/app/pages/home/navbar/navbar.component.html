@@ -1,0 +1,154 @@
+<div style="height: 39px"></div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+  <a class="navbar-brand" href="#">
+    <img style="margin-right:70px" src="/assets/images/news/54.svg" width="100%" height="50px" class="d-inline-block" alt="">
+  </a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbarNavDropdown">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['inicio']">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['preguntas-frecuentes']">PREGUNTAS FRECUENTES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" [routerLink]="['aviso-privacidad']">AVISO DE PRIVACIDAD</a>
+      </li>
+      <li class="nav-item">
+        <img src="/assets/images/icon-min.png" width="30" height="30" class="d-inline-block" alt="">
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" style="padding-right: 5rem">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <img src="/assets/images/news/53.svg" width="30" height="30" class="d-inline-block" alt=""> INICIAR SESIÓN
+        </a>
+        <login></login>
+      </li>
+    </ul>
+  </div>
+  <div style="height: 8px; width:100%; position: absolute;bottom:0" id="gradiente">
+  </div>
+
+</nav>
+
+
+
+
+<!--<div style="height:60px"></div>
+
+<nav id="navbar-example2" class="navbar bounce navbar-expand-lg navbar-light fixed-top" style="background-color:white;padding-top: 2.5px;padding-bottom: 0;">
+
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/icon.png" width="135" height="30" alt="">
+  </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-right">
+      <li class="nav-item nav-link" [routerLink]="" routerLinkActive="active">
+        <a href="#inicio">INICIO</a>
+      </li>
+      <li class="nav-item nav-link" [routerLink]="" routerLinkActive="active">
+        <a href="#inicio">PREGUNTAS FRECUENTES</a>
+      </li>
+      <li class="nav-item nav-link" [routerLink]="" routerLinkActive="active">
+        <a href="#inicio">AVISO DE PRIVACIDAD</a>
+      </li>
+      <li class="nav-item nav-link" [routerLink]="" routerLinkActive="active">
+        <img src="/assets/images/icon-min.png" width="30" height="30" class="d-inline-block align-top" alt="">
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <img src="/assets/images/icon-min.png" width="30" height="30" class="d-inline-block align-top" alt=""> INICIAR SESIÓN
+        </a>
+        <ul id="login-dp" class="dropdown-menu">
+          <li>
+            <login></login>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>-->
+
+
+
+<!--
+<div style="height:60px"></div>
+
+<nav id="navbar-example2" class="navbar bounce navbar-expand-lg navbar-light fixed-top" style="background-color:white;padding-top: 2.5px;padding-bottom: 0;">
+
+  <a class="navbar-brand" href="#">
+    <img src="assets/images/icon.png" width="135" height="30" alt="">
+  </a>
+
+  <h3 style="color:black; width:50%">¿ Necesitas Ayuda ?
+    <a href="tel:938-131-4749">
+      <span style="color:#2E9AFE"> 938 131 4749</span>
+    </a>
+  </h3>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-right">
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item" routerLinkActive="active">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isInicio}" [routerLink]="['../home']" [pageScrollDuration]="500"
+          href="#inicio">INICIO</a>
+      </li>
+      <li class="nav-item">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isRequisitos}" [pageScrollDuration]="500" href="#section-1">REQUISITOS</a>
+      </li>
+      <li class="nav-item">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isBeneficios}" [pageScrollDuration]="500" href="#section-2">BENEFICIOS</a>
+      </li>
+      <li class="nav-item">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isRecomp}" [pageScrollDuration]="500" href="#section-r">RECOMPENSAS</a>
+      </li>
+      <li class="nav-item">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isContact}" [pageScrollDuration]="500" href="#section-3">CONTACTO</a>
+      </li>
+      <li class="nav-item">
+        <a pageScroll [ngClass]="{'nav-link' : true, 'active-nav': isContact}" [pageScrollDuration]="500" href="#section-3">CONTACTO</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          LOGIN
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div class="dropdown-item">
+            <form class="form-inline">
+              <input class="form-control" type="text">
+            </form>
+          </div>
+
+        </div>
+      </li>      
+    </ul>
+  </div>
+</nav>-->

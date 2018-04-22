@@ -1,0 +1,96 @@
+<!-- MultiStep Form -->
+<div class="container-fluid section-register">
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <img src="assets/images/news/58.svg" class="mx-auto d-block" width="60%">
+      <h2 class="title">DATOS LABORALES</h2>
+    </div>
+    <div class="col-md-8">
+
+    </div>
+  </div>
+  <div [formGroup]="form">
+    <div class="row">
+      <div class="col-md-4 padding-form">
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('company_name').valid && form.get('company_name').touched), 'has-success': (form.get('company_name').valid && form.get('company_name').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/41.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="company_name" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon"
+              placeholder="NOMBRE DE LA EMPRESA" type="text">
+          </div>
+          <span *ngIf="!form.get('company_name').valid && (form.get('company_name').touched || form.get('company_name').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('puesto').valid && form.get('puesto').touched), 'has-success': (form.get('puesto').valid && form.get('puesto').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/42.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input formControlName="puesto" aria-describedby="basic-addon1" class="back-input form-control with-primary-addon" placeholder="PUESTO"
+              type="text">
+          </div>
+          <span *ngIf="!form.get('puesto').valid && (form.get('puesto').touched || form.get('puesto').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('salario_r').valid && form.get('salario_r').touched), 'has-success': (form.get('salario_r').valid && form.get('salario_r').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/33.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="salario_r" class="form-control back-input with-primary-addon" id="exampleSelect1">
+              <option value="" selected disabled>CADA CUANDO TE PAGAN</option>
+              <option>SEMANAL</option>
+              <option>CATORCENAL</option>
+              <option>QUINCENAL</option>
+              <option>MENSUAL</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('salario_r').valid && (form.get('salario_r').touched || form.get('salario_r').touched)" class="help-block sub-little-text"
+            style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('gasto_mensual').valid && form.get('gasto_mensual').touched), 'has-success': (form.get('gasto_mensual').valid && form.get('gasto_mensual').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/36.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input currencyMask [options]="{ prefix: '$ ', thousands: ',', decimal: '.', align: 'left'}" formControlName="gasto_mensual"
+              class="form-control back-input with-primary-addon" placeholder="GASTO MENSUAL APROXIMADO">
+          </div>
+          <span *ngIf="!form.get('gasto_mensual').valid && (form.get('gasto_mensual').touched || form.get('gasto_mensual').touched)"
+            class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+        </div>
+
+      </div>
+      <div class="col-md-4 padding-form">
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('contract_type').valid && form.get('contract_type').touched), 'has-success': (form.get('contract_type').valid && form.get('contract_type').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/43.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <select formControlName="salario_r" class="form-control back-input with-primary-addon" id="exampleSelect1">
+              <option value="" selected disabled>TIPO DE CONTRATACIÓN</option>
+              <option>PERMANENTE</option>
+              <option>TEMPORAL</option>
+            </select>
+          </div>
+          <span *ngIf="!form.get('contract_type').valid && (form.get('contract_type').touched || form.get('contract_type').touched)"
+            class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('salario_mensual').valid && form.get('salario_mensual').touched), 'has-success': (form.get('salario_mensual').valid && form.get('salario_mensual').touched)}">
+          <div class="input-group">
+            <img src="assets/images/news/44.svg" class="input-group-addon input-group-addon-primary addon-left" width="40px" height="100%">
+            <input currencyMask [options]="{ prefix: '$ ', thousands: ',', decimal: '.', align: 'left'}" formControlName="salario_mensual"
+              class="form-control back-input with-primary-addon" placeholder="SALARIO MENSUAL">
+          </div>
+          <span *ngIf="!form.get('salario_mensual').valid && (form.get('salario_mensual').touched || form.get('salario_mensual').touched)"
+            class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+        </div>
+        <div class="form-group" [ngClass]="{'has-error': (!form.get('fecha_init').valid && form.get('fecha_init').touched), 'has-success': (form.get('fecha_init').valid && form.get('fecha_init').touched)}">
+          <div class="col-md-12" style="padding:0">
+            <my-date-picker placeholder="FECHA DE INICIO LABORAL" (dateChanged)="onDateChanged($event)" name="mydate" [options]="myDatePickerOptions"
+              required></my-date-picker>
+            <span *ngIf="!form.get('fecha_init').valid && (form.get('fecha_init').touched || form.get('fecha_init').touched)" class="help-block sub-little-text"
+              style="color:red">Campo Requerido</span>
+          </div>
+
+        </div>
+        <div class="form-group text-right">
+          <button (click)="onSubmit()" class="btn btn-default"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

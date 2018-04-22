@@ -1,0 +1,271 @@
+<div class="al-main">
+    <div class="al-content">
+        <div class="row margin-0">
+            <div class="col-md-5 col-sm-12">
+                <!--<div class="card">
+                    <div class="card-body">
+                        <p class="font-weight-bold">PDF's</p>
+                        <div *ngFor="let file of archivosAlreadyUpdated">
+                            <div *ngIf="file.url">
+                                <br>
+                                <a [href]="file.url" target="_blank">{{ file.nombreArchivo}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>-->
+                <div *ngIf="archivosAlreadyUpdated.length > 0">
+                    <pdf-viewer [src]="pdfSrc" [render-text]="true" [external-link-target]="'blank'" [original-size]="false" style="display: block;"
+                        [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_1" [render-text]="true" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                    <pdf-viewer [src]="pdfSrc_2" [render-text]="true" [original-size]="false" style="display: block;" [show-all]="true"></pdf-viewer>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div [formGroup]="form" class="form-horizontal">
+
+                    <div class="row margin-0" style="padding: 10px">
+                        <div class="col-md-12">
+                            Datos Personales
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row margin-0">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('last_name').valid && form.get('last_name').touched), 'has-success': (form.get('last_name').valid && form.get('last_name').touched)}">
+                                <label for="exampleInputEmail1">Apellido Paterno</label>
+                                <input type="text" formControlName="last_name" class="form-control" placeholder="Apellido Paterno">
+                                <span *ngIf="!form.get('last_name').valid && (form.get('last_name').touched || form.get('last_name').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('name').valid && form.get('name').touched), 'has-success': (form.get('name').valid && form.get('name').touched)}">
+                                <label>Primer Nombre</label>
+                                <input type="text" formControlName="name" class="form-control" placeholder="Primer Nombre">
+                                <span *ngIf="!form.get('name').valid && (form.get('name').touched || form.get('name').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('birth_date').valid && form.get('birth_date').touched), 'has-success': (form.get('birth_date').valid && form.get('birth_date').touched)}">
+                                <label>Fecha de Nacimiento</label>
+                                <my-date-picker [defaultMonth]="defaultMonth" formControlName="birth_date" [options]="myDatePickerOptions"
+                                    required></my-date-picker>
+                                <span *ngIf="!form.get('birth_date').valid && (form.get('birth_date').touched || form.get('birth_date').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('curp').valid && form.get('curp').touched), 'has-success': (form.get('curp').valid && form.get('curp').touched)}">
+                                <label>CURP</label>
+                                <input type="text" formControlName="curp" class="form-control text-uppercase" placeholder="Escriba su CURP">
+                                <span *ngIf="!form.get('curp').valid && (form.get('curp').touched || form.get('curp').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Correo electrónico</label>
+                                <input type="text" class="form-control" formControlName="email" readonly>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('state').valid && form.get('state').touched), 'has-success': (form.get('state').valid && form.get('state').touched)}">
+                                <label>Estado</label>
+                                <input type="text" formControlName="state" class="form-control" placeholder="Estado">
+                                <span *ngIf="!form.get('state').valid && (form.get('state').touched || form.get('state').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('city').valid && form.get('city').touched), 'has-success': (form.get('city').valid && form.get('city').touched)}">
+                                <label>Ciudad</label>
+                                <input type="text" formControlName="city" class="form-control" placeholder="Ciudad">
+                                <span *ngIf="!form.get('city').valid && (form.get('city').touched || form.get('city').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('last_name_two').valid && form.get('last_name_two').touched), 'has-success': (form.get('last_name_two').valid && form.get('last_name_two').touched)}">
+                                <label>Apellido Materno</label>
+                                <input type="text" formControlName="last_name_two" class="form-control" placeholder="Apellido Materno">
+                                <span *ngIf="!form.get('last_name_two').valid && (form.get('last_name_two').touched || form.get('last_name_two').touched)"
+                                    class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('name_two').valid && form.get('name_two').touched), 'has-success': (form.get('name_two').valid && form.get('name_two').touched)}">
+                                <label>Segundo Nombre</label>
+                                <input type="text" formControlName="name_two" class="form-control" placeholder="Segundo Nombre">
+                                <span *ngIf="!form.get('name_two').valid && (form.get('name_two').touched || form.get('name_two').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('rfc').valid && form.get('rfc').touched), 'has-success': (form.get('rfc').valid && form.get('rfc').touched)}">
+                                <label>RFC</label>
+                                <input type="text" formControlName="rfc" class="form-control text-uppercase" placeholder="RFC">
+                                <span *ngIf="!form.get('rfc').valid && (form.get('rfc').touched || form.get('rfc').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('phone').valid && form.get('phone').touched), 'has-success': (form.get('phone').valid && form.get('phone').touched)}">
+                                <label>Teléfono</label>
+                                <input type="number" formControlName="phone" class="form-control" placeholder="Teléfono">
+                                <span *ngIf="!form.get('phone').valid && (form.get('phone').touched || form.get('phone').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Teléfono de la Compañia</label>
+                                <input type="number" formControlName="company_phone" class="form-control" placeholder="Teléfono Compañia">
+                            </div>
+
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('cp').valid && form.get('cp').touched), 'has-success': (form.get('cp').valid && form.get('cp').touched)}">
+                                <label>Código Postal</label>
+                                <input type="text" formControlName="cp" class="form-control" placeholder="CP">
+                                <span *ngIf="!form.get('cp').valid && (form.get('cp').touched || form.get('cp').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('colonia').valid && form.get('colonia').touched), 'has-success': (form.get('colonia').valid && form.get('colonia').touched)}">
+                                <label>Colonia o población</label>
+                                <input type="text" formControlName="colonia" class="form-control" placeholder="Colonia o Población">
+                                <span *ngIf="!form.get('colonia').valid && (form.get('colonia').touched || form.get('colonia').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row margin-0">
+                        <div class="col-md-12">
+                            Datos Laborales
+                            <hr>
+                        </div>
+                    </div>
+
+                    <div class="row margin-0">
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('company_name').valid && form.get('company_name').touched), 'has-success': (form.get('company_name').valid && form.get('company_name').touched)}">
+                                <label>Nombre Compañia</label>
+                                <input type="text" formControlName="company_name" class="form-control" placeholder="Nombre Compañia">
+                                <span *ngIf="!form.get('company_name').valid && (form.get('company_name').touched || form.get('company_name').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('puesto').valid && form.get('puesto').touched), 'has-success': (form.get('puesto').valid && form.get('puesto').touched)}">
+                                <label>Puesto</label>
+                                <input type="text" formControlName="puesto" class="form-control" placeholder="Puesto">
+                                <span *ngIf="!form.get('puesto').valid && (form.get('puesto').touched || form.get('puesto').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('salario_r').valid && form.get('salario_r').touched), 'has-success': (form.get('salario_r').valid && form.get('salario_r').touched)}">
+                                <label>Cada Cuando Pagan</label>
+                                <input type="text" formControlName="salario_r" class="form-control" placeholder="">
+                                <span *ngIf="!form.get('salario_r').valid && (form.get('salario_r').touched || form.get('salario_r').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('gasto_mensual').valid && form.get('gasto_mensual').touched), 'has-success': (form.get('gasto_mensual').valid && form.get('gasto_mensual').touched)}">
+                                <label>Gasto Mensual</label>
+                                <input type="text" formControlName="gasto_mensual" class="form-control" placeholder="Gasto Mensual">
+                                <span *ngIf="!form.get('gasto_mensual').valid && (form.get('gasto_mensual').touched || form.get('gasto_mensual').touched)"
+                                    class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('contract_type').valid && form.get('contract_type').touched), 'has-success': (form.get('contract_type').valid && form.get('contract_type').touched)}">
+                                <label>Tipo de Contrato</label>
+                                <input type="text" formControlName="contract_type" class="form-control" placeholder="Tipo de Contrato">
+                                <span *ngIf="!form.get('contract_type').valid && (form.get('contract_type').touched || form.get('contract_type').touched)"
+                                    class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('salario_mensual').valid && form.get('salario_mensual').touched), 'has-success': (form.get('salario_mensual').valid && form.get('salario_mensual').touched)}">
+                                <label>Salario Mensual</label>
+                                <input type="text" formControlName="salario_mensual" class="form-control" placeholder="Salario Mensual">
+                                <span *ngIf="!form.get('salario_mensual').valid && (form.get('salario_mensual').touched || form.get('salario_mensual').touched)"
+                                    class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row margin-0">
+                        <div class="col-md-12">
+                            Detalle del Préstamo
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row margin-0">
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('payment_date').valid && form.get('payment_date').touched), 'has-success': (form.get('payment_date').valid && form.get('payment_date').touched)}">
+                                <label>Fecha de Pago</label>
+                                <my-date-picker formControlName="payment_date" [options]="myDatePickerOptionsDefault"
+                                    required></my-date-picker>
+                                <span *ngIf="!form.get('payment_date').valid && (form.get('payment_date').touched || form.get('payment_date').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('request_date').valid && form.get('request_date').touched), 'has-success': (form.get('request_date').valid && form.get('request_date').touched)}">
+                                <label>Fecha de Solicitud</label>
+                                <my-date-picker formControlName="request_date" [options]="myDatePickerOptionsDefault"
+                                    required></my-date-picker>
+                                <span *ngIf="!form.get('request_date').valid && (form.get('request_date').touched || form.get('request_date').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('monto').valid && form.get('monto').touched), 'has-success': (form.get('monto').valid && form.get('monto').touched)}">
+                                <label>Monto</label>
+                                <input type="text" formControlName="monto" class="form-control" placeholder="Monto">
+                                <span *ngIf="!form.get('monto').valid && (form.get('monto').touched || form.get('monto').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('comision').valid && form.get('comision').touched), 'has-success': (form.get('comision').valid && form.get('comision').touched)}">
+                                <label>Comisión</label>
+                                <input type="text" formControlName="comision" class="form-control" placeholder="Comisión">
+                                <span *ngIf="!form.get('comision').valid && (form.get('comision').touched || form.get('comision').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('interes').valid && form.get('interes').touched), 'has-success': (form.get('interes').valid && form.get('interes').touched)}">
+                                <label>Interes</label>
+                                <input type="text" formControlName="interes" class="form-control" placeholder="Interes">
+                                <span *ngIf="!form.get('interes').valid && (form.get('interes').touched || form.get('interes').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('iva').valid && form.get('iva').touched), 'has-success': (form.get('iva').valid && form.get('iva').touched)}">
+                                <label>IVA</label>
+                                <input type="text" formControlName="iva" class="form-control" placeholder="IVA">
+                                <span *ngIf="!form.get('iva').valid && (form.get('iva').touched || form.get('iva').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('payment_total').valid && form.get('payment_total').touched), 'has-success': (form.get('payment_total').valid && form.get('payment_total').touched)}">
+                                <label>Total</label>
+                                <input type="text" formControlName="payment_total" class="form-control" placeholder="Total">
+                                <span *ngIf="!form.get('payment_total').valid && (form.get('payment_total').touched || form.get('payment_total').touched)"
+                                    class="help-block sub-little-text" style="color:red">Campo Requerido</span>
+                            </div>
+                            <div class="form-group" [ngClass]="{'has-error': (!form.get('motive').valid && form.get('motive').touched), 'has-success': (form.get('motive').valid && form.get('motive').touched)}">
+                                <label>Motivo</label>
+                                <textarea formControlName="motive" class="form-control" placeholder="Motivo"></textarea>
+                                <span *ngIf="!form.get('motive').valid && (form.get('motive').touched || form.get('motive').touched)" class="help-block sub-little-text"
+                                    style="color:red">Campo Requerido</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6" style="padding-top: 20px">
+                <div *ngFor="let client of clientsArray; let i = index">
+                    <div class="card" *ngIf="client.val_first && !client.val_second">
+                        <div class="card-body" [ngClass]="{'bg-custom text-white': selectedIndex == i}" (click)="onSelectClient(i, client)">
+                            <img [src]="client.image" class="img-fluid" width="10%"> {{ client.name }} {{ client.last_name }}
+                            <small class="text-right"> {{ client.date | date:'short' }}</small>
+                            <div class="row">
+                                <div class="col-md-2">
+                                </div>
+                                <div class="col-md-10">
+                                    <p style="padding-top:10px">
+                                        Solicitud de aprobación
+                                        <br> Se requiere su aprobación para realizarle un pago a {{ client.name }} {{ client.last_name
+                                        }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-transparent" style="padding:5px">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" (click)="onAccepted(client.id, i)" class="btn btn-success">Validar</button>
+                                    <button type="submit" (click)="onRejected(client.id, i)" class="btn btn-danger">Denegar</button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

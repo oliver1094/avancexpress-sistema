@@ -1,0 +1,204 @@
+@font-face {
+    font-family: bebasneue;
+    src: url('../../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.title{
+    font-family: 'bebasneue';
+    font-size: 35pt;
+    padding-top: 30px;
+}
+
+.label-text {
+    font-family: 'bebasneue';
+    font-size: 15pt;  
+    padding-top: 20px;      
+}
+
+.padding {
+    padding: 70px 10px 30px 10px;
+}
+
+.section-register {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */    
+    background: url(../../../../assets/images/news/24.svg) no-repeat;
+    background-size: cover;
+}
+
+.padding-form {
+    padding: 5px 40px 5px 40px
+}
+
+.addon-left {
+    padding: 0 !important;
+    border: none !important;
+    background-color: black;
+}
+
+.addon-right {
+    padding: 0 !important;
+    border: none !important;
+    background-color: black;
+}
+
+.back-input {    
+    background-color: black;
+    color: white;        
+}
+:-moz-placeholder {
+    color:white;
+    opacity: 100%;
+}
+
+::-moz-placeholder {
+    color:white;
+    opacity: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+}
+
+:-ms-input-placeholder {
+    color: white;
+}
+
+button.btn.btn-default {
+    background: url(../../../../assets/images/news/52.svg) no-repeat !important;    
+    background-size: cover !important;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    border-radius: 12px;
+    border:none;
+}
+
+.hidden-element {
+    visibility: hidden;
+}
+
+.al-content {
+    padding: 0 !important;
+}
+
+.back-green {
+    background-color: #70BF41;
+}
+
+.title-white {
+    color: #ffffff;
+}
+
+button.btn.btn-default {
+    border-width: 2px;
+    color: #51A7F9;    
+    border-color: #51A7F9;
+}
+
+.text-blue {
+    color: #51A7F9;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #53585F;
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: gray;
+}
+
+.hero.is-fullheight .hero-body, .hero.is-halfheight .hero-body {
+    align-items: center;
+    display: flex;
+}
+.hero-body, .section {
+    padding: 3rem 1.5rem;
+}
+.hero-body {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.columns.is-multiline {
+    flex-wrap: wrap;
+}
+
+.hero .drop-container {
+    background: #fff;
+    border-radius: 6px;
+    height: 150px;
+    width: 100%;
+    box-shadow: 1px 2px 20px hsla(0,0%,4%,.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #c0c4c7;
+}
+
+.hero .drop-container p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #c0c4c7;
+    padding: 10px;
+}
+
+.hero .drop-container p .upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #5754a3;
+}
+
+.hero .drop-container p .upload-button input {
+    display: none;    
+}
+
+.upload-button input {
+    display: none;    
+}
+.upload-button {
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: black;    
+}
+
+.hero .upload-items .upload-item {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+}
+
+.hero .upload-items .upload-item .filename {
+    display: block;
+    padding: 0 0 5px 5px;
+    color: #74809d;
+}
+
+.disabled-div {
+    background-color: rgba(0,0,0,1);            
+    filter:brightness(0.05);
+}
+
+.input-group {
+    background-color: #dde1e9;
+    border-radius: 20px;
+}
+
+.p {
+    padding-top: 13px;
+    padding-left: 15px;
+}

@@ -1,0 +1,30 @@
+@font-face {
+    font-family: bebasneue;
+    src: url('../../../../assets/fonts/BebasNeueBold.otf');
+}
+
+.footer-title {    
+    color:white;    
+    font-weight: 400;    
+    font-family: 'bebasneue';
+    font-size: 23pt;
+}
+.section-footer {
+    background-color: #16202c;
+    padding-bottom: 30px;
+}
+
+.footer { 
+    bottom: 0;
+    width: 100%;    
+    line-height: 60px;
+    background-color: #16202c;
+}
+
+.footer > .container {    
+    padding-top: 1.5rem;
+}
+
+.pd-0 {
+    padding: 0;
+}

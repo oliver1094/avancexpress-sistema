@@ -1,0 +1,80 @@
+.hidden-element {
+    visibility: hidden;
+}
+
+.al-content {
+    padding: 0 !important;
+}
+
+.back-green {
+    background-color: #70BF41;
+}
+
+.title-white {
+    color: #ffffff;
+}
+
+button.btn.btn-default {
+    border-width: 2px;
+    color: #51A7F9;    
+    border-color: #51A7F9;
+}
+
+.text-blue {
+    color: #51A7F9;
+}
+
+.padding-0 {
+    padding: 0;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.list-group-item {
+    border: none;
+    background-color: #53585F;
+    color: white;
+}
+
+.list-group-item.active {
+    background-color: gray;
+}
+
+.bg-custom {
+    background-color: #0e3d89;
+}
+
+.circle-red {
+    width: 10px;
+    height: 10px;
+    background: rgb(201, 6, 6);
+    margin-top:10px;
+}
+
+.circle-yellow {
+    width: 10px;
+    height: 10px;
+    background:rgb(233, 233, 2);
+    margin-top:10px;
+}
+
+.circle-green {
+    width: 10px;
+    height: 10px;
+    background: #70BF41;
+    margin-top:10px;
+}
+
+.circle {
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.scroll {    
+    width: 100%;
+    height: 720px;
+    overflow: scroll;
+}
